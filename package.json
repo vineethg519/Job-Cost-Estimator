@@ -1,7 +1,7 @@
 {
-  "name": "JobCostEstimator9",
+  "name": "JobCostEstimator3",
   "version": "0.0.1",
-  "description": "Job costing application 9",
+  "description": "Job costing application 3",
   "main": "app.js",
   "dependencies": {
     "body-parser": "latest",
@@ -20,11 +20,11 @@
     "nedb": "latest",
     "require-yaml": "latest"
   },
-  "author": "Denise Case",
-  "homepage": "https://bitbucket.org/professorcase/jce9",
+  "author": "Web Apps Fall 2016 Section 03",
+  "homepage": "https://bitbucket.org/56316f3/jce3",
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/professorcase/jce9"
+    "url": "https://bitbucket.org/56316f3/jce3"
   },
   "license": "Apache-2.0",
   "publisher": "vscode",
