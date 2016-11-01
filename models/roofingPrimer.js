@@ -10,3 +10,6 @@ var RoofingPrimerSchema = new Schema({
 
 var roofingPrimer = mongoose.model('RoofingPrimer', RoofingPrimerSchema)
 module.exports = roofingPrimer
+// This model is managed by Team 3-13
+// Gajula, Vineeth
+// Emani, Venkata Sainath Reddy
