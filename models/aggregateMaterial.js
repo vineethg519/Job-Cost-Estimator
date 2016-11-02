@@ -13,6 +13,6 @@ var AggregateMaterialSchema = new Schema({
 var aggregateMaterial = mongoose.model('AggregateMaterial', AggregateMaterialSchema)
 module.exports = aggregateMaterial
 
-// This model is managed by Team 4-12
-// Harsha Malipatlolla
-// Rakesh Pakala
+// This model is managed by Team 3-12
+// Anoop kumar Yalala
+// Anudeep reddy Mallidi
