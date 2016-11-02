@@ -9,7 +9,13 @@ api.get("/", function (request, response) {
 });
 
 
+api.get("/details", function (request, response) {
+  response.render("about/details.ejs");
+});
 
+api.get("/edit", function (request, response) {
+  response.render("about/edit.ejs");
+});
 
 
 module.exports = api;
