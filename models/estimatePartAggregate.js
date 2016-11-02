@@ -1,6 +1,11 @@
-var mongoose = require('mongoose')
-    , Schema = mongoose.Schema
-    , AggregateMaterial = require('./aggregateMaterial.js')
+var express = require('express');
+var api = express.Router();
+var find = require('lodash.find');
+var remove = require('lodash.remove');
+var findIndex = require('lodash.findindex');
+var Model = require('../models/estimatePartAggregate.js');
+const notfoundstring = 'No such estimatePartAggregate';
+
 
 var EstimatePartAggregateSchema = new Schema({
     isUsed: { type: Boolean, required: true, default: false },
