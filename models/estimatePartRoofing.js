@@ -30,3 +30,6 @@ var EstimatePartRoofingSchema = new Schema({
 
 var estimatePartRoofing = mongoose.model('EstimatePartRoofing', EstimatePartRoofingSchema)
 module.exports = estimatePartRoofing
+
+// This model is managed by by team 03-R06
+// S.SunilKumar,K.Deepak
