@@ -11,3 +11,4 @@ var EstimatePartFootageSchema = new Schema({
 
 var estimatePartFootage = mongoose.model('EstimatePartFootage', EstimatePartFootageSchema)
 module.exports = estimatePartFootage
+
