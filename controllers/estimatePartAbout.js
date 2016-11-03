@@ -5,11 +5,16 @@ var api = express.Router();
 
 // GET to this controller root URI
 api.get("/", function (request, response) {
-response.render("about/index.ejs");
+  response.render("about/index.ejs");
 });
 
-api.get("/findall", function (request, response) {
-response.render("about/findAll.ejs");
+
+api.get("/details", function (request, response) {
+  response.render("about/details.ejs");
+});
+
+api.get("/edit", function (request, response) {
+  response.render("about/edit.ejs");
 });
 
 
