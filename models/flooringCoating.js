@@ -10,3 +10,8 @@ var FlooringCoatingSchema = new Schema({
 
 var flooringCoating = mongoose.model('FlooringCoating', FlooringCoatingSchema)
 module.exports = flooringCoating
+
+
+// This model is managed by Team 3-12
+// Anoop kumar Yalala
+// Anudeep reddy Mallidi
