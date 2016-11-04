@@ -1,10 +1,18 @@
 [
-  {
-    "client": "Amanda Bank",
-    "created": "2016-10-04",
-    "address": "800 University Drive",
-    "city": "Maryville",
-    "state": "MO",
-    "zipcode": 64468
-  }
+{
+"client": "Amanda Bank",
+"created": "2016-10-04",
+"address": "800 University Drive",
+"city": "Maryville",
+"state": "MO",
+"zipcode": 64468
+},
+{
+"client": "Amanda Bank",
+"created": "2016-10-04",
+"address": "800 University Drive",
+"city": "hweoihweofh",
+"state": "MO",
+"zipcode": 64468
+}
 ]
