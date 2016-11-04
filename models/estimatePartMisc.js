@@ -11,3 +11,7 @@ var EstimatePartMiscSchema = new Schema({
 
 var estimatePartMisc = mongoose.model('EstimatePartMisc', EstimatePartMiscSchema)
 module.exports = estimatePartMisc
+
+// This model is managed by Team 5-11
+// Monish Verma
+// Abhilash Pochampally
