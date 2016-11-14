@@ -1,5 +1,6 @@
 [
   {
+    "_id": 1,
     "_type": "waterproofingEstimate",
     "estimatePartAbout": {
       "client": "Amanda Dance",
@@ -16,6 +17,7 @@
     "bidPerSquareFoot": 5.00
   },
   {
+    "_id":2,
     "_type": "waterproofingEstimate",
     "estimatePartAbout": {
       "client": "Balaji Bikes",
