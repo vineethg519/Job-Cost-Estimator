@@ -1,4 +1,8 @@
+
+
+
 var mongoose = require('mongoose')
+
   , Schema = mongoose.Schema
   , About = require('./estimatePartAbout.js')
   , Footage = require('./estimatePartFootage.js')
@@ -28,3 +32,8 @@ FlooringEstimateSchema.virtual('created').get(function () {
 
 var flooringEstimate = mongoose.model('FlooringEstimate', FlooringEstimateSchema)
 module.exports = flooringEstimate
+
+
+// This model is managed by Team 3-01
+// Avinash varma Mandapati
+// Vipul Reddy Maddadi
