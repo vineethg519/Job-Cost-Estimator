@@ -40,7 +40,7 @@ api.get('/details/:id', function(req, res) {
         {
             title: "Estimate Part Aggregate",
             layout: "layout.ejs",
-            estimatePartAggregates: item
+            estimatePartAggregate: item
         });
 });
 

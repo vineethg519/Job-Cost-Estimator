@@ -15,12 +15,12 @@
     </tr>
     </thead>
     <tbody>
-<% for (var i = 0; i < estimatePartAggregates.query.length; i++) { %>
+		<% for (var i = 0; i < estimatePartAggregates.query.length; i++) { %>
          <tr>
             <td><%=  estimatePartAggregates.query[i].isUsed %></td>
             <td><%=  estimatePartAggregates.query[i].aggregateTypeSelection %></td>
             <td><a href=""> Delete </a>|
-				<a href="">Details</a> |
+				<a href="estimatePartAggregate/details/<%= i+1 %>">Details</a> |
 				<a href="">Edit</a>
 			</td>
          </tr>
