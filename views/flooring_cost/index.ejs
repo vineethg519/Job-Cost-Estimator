@@ -17,9 +17,18 @@
 <% for (var i = 0; i < estimatePartFloorings.query.length; i++) { %>
          <tr>
             <td><%=  estimatePartFloorings.query[i].subtotal %></td>
-            <td>Delete  Details  Edit</td>
+            <td>
+            
+            <a href="estimatePartFlooring"/delete/<%= estimatePartFloorings.query[i] %>">Delete </a>
+            <a href="estimatePartFlooring"/details/<%= estimatePartFloorings.query[i]%>"> Details </a>
+             <a href="estimatePartFlooring"/edit/<%= estimatePartFloorings.query[i]%>"> Edit </a> 
+             
+             </td>
          </tr>
          <% } %>
 </tbody>
 </table>
 </div>
+<!-- This model is managed by Team 3-5
+ AjithReddy Pati
+Sai Rama Rao Nayeni -->
