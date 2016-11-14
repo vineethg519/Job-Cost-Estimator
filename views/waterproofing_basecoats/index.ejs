@@ -23,9 +23,16 @@
             <td><%=  waterproofingBasecoats.query[i].displayorder %></td>
             <td><%=  waterproofingBasecoats.query[i].price %></td>
             <td><%=  waterproofingBasecoats.query[i].unit %></td>
-            <td>Delete  Details  Edit</td>
+            <td>							
+							<a href="waterproofingBasecoat/delete/<%=  i+1 %>"> Delete </a> |
+                            <a href="waterproofingBasecoat/details/<%= i+1 %>"> Details </a> |
+                            <a href="waterproofingBasecoat/edit/<%=    i+1 %>"> Edit </a>
+						</td>
          </tr>
          <% } %>
 </tbody>
 </table>
 </div>
+<!-- This project is managed by R14 --!>
+<!-- navyatha vegesna--!>
+<!-- durga bhavani --!>
