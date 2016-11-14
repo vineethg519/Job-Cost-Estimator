@@ -17,7 +17,11 @@
 <% for (var i = 0; i < estimatePartMiscs.query.length; i++) { %>
          <tr>
             <td><%=  estimatePartMiscs.query[i].subtotal %></td>
-            <td>Delete  Details  Edit</td>
+           <td>
+            <a href="estimatePartMisc/delete/<%=  estimatePartMiscs.query[i]._id %>"> Delete </a> |
+							<a href="estimatePartMisc/details/<%= estimatePartMiscs.query[i]._id %>"> Details </a> |
+							<a href="estimatePartMisc/edit/<%=    estimatePartMiscs.query[i]._id %>"> Edit </a>
+            </td>
          </tr>
          <% } %>
 </tbody>
