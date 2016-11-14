@@ -19,6 +19,11 @@
             <td><%=  estimatePartAbouts.query[i].client %></td>
             <td><%=  estimatePartAbouts.query[i].city %></td>
             <td>Delete  Details  Edit</td>
+            <td>
+            <a href="/waterproofingEstimate/delete/<%= c %>">Delete</a> |
+<a href="/waterproofingEstimate/edit/<%= c %>">Edit</a> |
+<a href="/waterproofingEstimate/details/<%= c %>">Details</a>
+</td>
          </tr>
          <% } %>
 </tbody>

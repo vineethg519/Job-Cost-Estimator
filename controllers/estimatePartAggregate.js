@@ -8,9 +8,6 @@ var api = express.Router();
 api.get("/", function (request, response) {
   response.render("aggregate_cost/index.ejs");
 });
-
-<<<<<<< HEAD
-=======
 // GET create
 api.get("/create", function(req, res) {
     console.log('Handling GET /create' + req);
