@@ -36,9 +36,9 @@
 							<%=  waterproofingPrimers.query[i].unit %>
 						</td>
 						<td>
-							<a href="waterproofingprimer/delete/<%=  i+1 %>"> Delete </a> |
-							<a href="waterproofingprimer/details/<%= i+1 %>"> Details </a> |
-							<a href="waterproofingprimer/edit/<%=    i+1 %>"> Edit </a>
+							<a href="waterproofingPrimer/delete/<%=  waterproofingPrimers.query[i]._id %>"> Delete </a> |
+							<a href="waterproofingPrimer/details/<%= waterproofingPrimers.query[i]._id %>"> Details </a> |
+							<a href="waterproofingPrimer/edit/<%=    waterproofingPrimers.query[i]._id %>"> Edit </a>
 						</td>
 					</tr>
 					<% } %>
