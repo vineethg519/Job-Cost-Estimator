@@ -14,29 +14,23 @@ const notfoundstring = 'No such roofing basecoats';
 // HANDLE JSON REQUESTS --------------------------------------------
 
 
-//Base:  api/waterproofingEstimate
-
-//GET /api/waterproofingEstimate
-
-
-// GET /api/waterproofingEstimate/{id}
-
 //GET create 
 api.get('/create', function(req, res) {
     console.log('Handling GET /create' + req);
     res.render("roofing_basecoats/create.ejs",
         { title: "RB", layout: "layout.ejs" });
 });
-
+//GET Index 
 api.get("/", function (request, response) {
   response.render("roofing_basecoats/index.ejs");
 });
+//GET findall 
 api.get('/findall', function(req, res){
     res.setHeader('Content-Type', 'application/json');
     var data = req.app.locals.roofingBasecoats.query;
     res.send(JSON.stringify(data));
 });
-
+//GET findone 
    api.get('/findone/:id', function(req, res){
      res.setHeader('Content-Type', 'application/json');
     var id = parseInt(req.params.id);
@@ -46,7 +40,7 @@ api.get('/findall', function(req, res){
     res.send(JSON.stringify(item));
 }); 
 
-
+//GET /delete/:id 
 api.get('/delete/:id', function(req, res) {
     console.log("Handling GET /delete/:id " + req);
     var id = parseInt(req.params.id);
@@ -78,7 +72,7 @@ api.get('/details/:id', function(req, res) {
         });
 });
 
-// GET one
+// GET /edit:/id
 api.get('/edit/:id', function(req, res) {
     console.log("Handling GET /edit/:id " + req);
     var id = parseInt(req.params.id);
@@ -143,6 +137,30 @@ api.post('/delete/:id', function(req, res, next) {
 });
 
 module.exports = api;
+
+/* 10 controller methods handled by controller:
+
+controllers/roofingBasecoats.js
+
+2 Respond with JSON:
+
+http://127.0.0.1:8081/roofingBasecoat/findall [WORKING]
+http://127.0.0.1:8081/roofingBasecoat/findone/1 [WORKING]
+
+5 Respond with CRUD Views:
+
+http://127.0.0.1:8081/roofingBasecoat [WORKING]
+http://127.0.0.1:8081/roofingBasecoat/create [WORKING]
+http://127.0.0.1:8081/roofingBasecoat/delete/1 [WORKING]
+http://127.0.0.1:8081/roofingBasecoat/details/1 [WORKING]
+http://127.0.0.1:8081/roofingBasecoat/edit/1 [WORKING]
+
+3 Respond by executing CRUD actions:
+
+http://127.0.0.1:8081/roofingBasecoat/save [WORKING]
+http://127.0.0.1:8081/roofingBasecoat/save/1 [WORKING]
+http://127.0.0.1:8081/roofingBasecoat/delete/1 [WORKING]
+*/
 // This model is managed by Team 3-13
 // Gajula, Vineeth
 // Emani, Venkata Sainath Reddy
