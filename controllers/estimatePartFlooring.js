@@ -30,6 +30,27 @@ res.setHeader('Content-Type', 'application/json');
 var data = req.app.locals.estimatePartFloorings.query;
 res.send(JSON.stringify(data));
 });
+api.get('/findone/:id', function(req, res){
+     res.setHeader('Content-Type', 'application/json');
+    var id = parseInt(req.params.id);
+    var data = req.app.locals.estimatePartFloorings.query;
+    var item = find(data, { '_id': id });
+    if (!item) { return res.end(notfoundstring); }
+    res.send(JSON.stringify(item));
+});
+
+api.get("/delete", function(request, response){
+response.render("flooring_cost/delete.ejs")
+});
+api.get("/create", function(request, response){
+response.render("flooring_cost/create.ejs")
+});
+api.get("/edit", function(request, response){
+response.render("flooring_cost/edit.ejs")
+});
+api.get("/details", function(request, response){
+response.render("flooring_cost/details.ejs")
+});
 
 // This model is managed by Team 3-5
 // Sai Rama Rao Nayeni
