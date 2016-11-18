@@ -27,7 +27,7 @@ api.get("/", function (req, res) {
 });
 api.get("/create", function(req, res) {
     console.log('Handling GET /create' + req);
-    res.render("waterproofing_primers/create.ejs",
+    res.render("waterproofing_basecoats/create.ejs",
         { title: "WP Primers", layout: "layout.ejs" });
 });
 
