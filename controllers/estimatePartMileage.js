@@ -32,12 +32,12 @@ api.get('/edit', function (request, response) {
 
 
 
-<<<<<<< HEAD
+
 
 module.exports = api;
-=======
+
 /**This controller is managed by Team 5-11
 Monish Verma
 Abhilash Pochampally
 */
->>>>>>> 6cda3bd03c20768ee40c5dbf7e1609ecff8140d6
+

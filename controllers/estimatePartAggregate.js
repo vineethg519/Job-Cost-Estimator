@@ -31,7 +31,7 @@ api.get('/details/:id', function(req, res) {
             estimatePartAggregates: item
         });
 });
->>>>>>> 6cda3bd03c20768ee40c5dbf7e1609ecff8140d6
+
 
 
 

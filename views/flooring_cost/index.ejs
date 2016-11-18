@@ -18,12 +18,20 @@
          <tr>
             <td><%=  estimatePartFloorings.query[i].subtotal %></td>
             <td>
+<<<<<<< HEAD
             
             <a href="estimatePartFlooring"/delete/<%= estimatePartFloorings.query[i] %>">Delete </a>
             <a href="estimatePartFlooring"/details/<%= estimatePartFloorings.query[i]%>"> Details </a>
              <a href="estimatePartFlooring"/edit/<%= estimatePartFloorings.query[i]%>"> Edit </a> 
              
              </td>
+=======
+            <a href="estimatePartFlooring/delete"<%= estimatePartFloorings.query[i].id %>"> Delete </a> | 
+            <a href="estimatePartFlooring/details"  <%= estimatePartFloorings.query[i].id %>"> Details</a> |
+            <a href="estimatePartFlooring/edit" <%= estimatePartFloorings.query[i].id %>">  Edit </a> 
+            
+            </td>
+>>>>>>> 19b6c2412aa9d4a52d073c20848a27e43ad217dc
          </tr>
          <% } %>
 </tbody>

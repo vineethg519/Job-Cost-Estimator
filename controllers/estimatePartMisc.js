@@ -10,11 +10,11 @@ api.get("/", function (request, response) {
 });
 
 
-<<<<<<< HEAD
+
 
 
 module.exports = api;
-=======
+
 // GET to this controller root URI
 api.get("/", function (request, response) {
   response.render("mileage_cost/index.ejs");
@@ -47,4 +47,4 @@ module.exports = api;
 Monish Verma
 Abhilash Pochampally
 */
->>>>>>> 6cda3bd03c20768ee40c5dbf7e1609ecff8140d6
+
