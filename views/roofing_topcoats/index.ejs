@@ -3,12 +3,13 @@
 <div class="container">
  <h2>Material roofing topcoat costs</h2>
 
-<p>There are  <%= roofingTopcoats.query.length %> roofing topcoat products. <br/>
+<p>There are  <%= roofingTopcoats.query.length %> roofing topcoats. <br/>
 <a href="roofingTopcoat/create">Add a new one.</a></p>
 
 <table class="table" border="1">
     <thead>
       <tr>
+      <th>ID</th>
         <th>Name</th>
         <th>Display Order</th>
         <th>Price</th>
@@ -20,6 +21,7 @@
     <% count=0; %>
 <% for (var i = 0; i < roofingTopcoats.query.length; i++) { %>
          <tr><% count++; %>
+         <td><%=  roofingTopcoats.query[i]._id %></td>
             <td><%=  roofingTopcoats.query[i].name %></td>
             <td><%=  roofingTopcoats.query[i].displayorder %></td>
             <td><%=  roofingTopcoats.query[i].price %></td>

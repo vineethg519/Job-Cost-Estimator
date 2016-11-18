@@ -23,7 +23,25 @@ api.get("/", function (request, response) {
   response.render("labor_cost/index.ejs");
 });
 
+//GET create 
+api.get('/create', function (request, response) {
+   response.render("labor_cost/create.ejs");
+});
 
+//GET delete 
+api.get('/delete', function (request, response) {
+   response.render("labor_cost/delete.ejs");
+});
+
+//GET details 
+api.get('/details', function (request, response) {
+   response.render("labor_cost/details.ejs");
+});
+
+//GET edit 
+api.get('/edit', function (request, response) {
+   response.render("labor_cost/edit.ejs");
+});
 
 
 module.exports = api;
