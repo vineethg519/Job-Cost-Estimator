@@ -17,9 +17,14 @@
 <% for (var i = 0; i < estimatePartLabors.query.length; i++) { %>
          <tr>
             <td><%=  estimatePartLabors.query[i].subtotal %></td>
-            <td>Delete  Details  Edit</td>
+            <td><a href="estimatePartLabor/delete/<%=  estimatePartLabors.query[i]._id %>"> Delete </a> |
+							<a href="estimatePartLabor/details/<%= estimatePartLabors.query[i]._id %>"> Details </a> |
+							<a href="estimatePartLabor/edit/<%=    estimatePartLabors.query[i]._id %>"> Edit </a></td>
          </tr>
          <% } %>
 </tbody>
 </table>
 </div>
+<!--This view is managed by Team 3-10-->
+<!--Vineetha Boppishetty-->
+<!--Renu Kappara-->

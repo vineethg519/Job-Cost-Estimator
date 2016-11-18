@@ -11,3 +11,7 @@ var WaterproofingPrimerSchema = new Schema({
 
 var waterproofingPrimer = mongoose.model('WaterproofingPrimer', WaterproofingPrimerSchema)
 module.exports = waterproofingPrimer
+
+// This model is managed by Team 3-14
+// Navyatha Vegesna
+// Durga Bhavani
