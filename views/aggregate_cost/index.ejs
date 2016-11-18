@@ -3,7 +3,7 @@
 <div class="container">
  <h2>All entries</h2>
 
-<p>There are  <%= estimatePartAggregates.query.length %> entries. <br/>
+<p>There are  <%= estimatePartAggregates.query.length %>  entries. <br/>
 <a href="estimatePartAggregate/create">Add a new one.</a></p>
 
 <table class="table" border="1">
@@ -19,9 +19,9 @@
          <tr>
             <td><%=  estimatePartAggregates.query[i].isUsed %></td>
             <td><%=  estimatePartAggregates.query[i].aggregateTypeSelection %></td>
-            <td><a href=""> Delete </a>|
-				<a href="estimatePartAggregate/details/<%= i+1 %>">Details</a> |
-				<a href="">Edit</a>
+            <td><a href="estimatePartAggregate/delete/<%= estimatePartAggregates.query[i]._id %>"> Delete </a>|
+				<a href="estimatePartAggregate/details/<%= estimatePartAggregates.query[i]._id %>">Details</a> |
+				<a href="estimatePartAggregate/edit/<%= estimatePartAggregates.query[i]._id %>">Edit</a>
 			</td>
          </tr>
          <% } %>
