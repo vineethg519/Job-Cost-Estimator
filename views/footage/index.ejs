@@ -17,9 +17,16 @@
 <% for (var i = 0; i < estimatePartFootages.query.length; i++) { %>
          <tr>
             <td><%=  estimatePartFootages.query[i].sqft %></td>
-            <td>Delete  Details  Edit</td>
+            <td>
+           <a href="estimatePartFootage/delete"<%= estimatePartFootages.query[i].id %>"> Delete </a> | 
+            <a href="estimatePartFootage/details"  <%= estimatePartFootages.query[i].id %>"> Details</a> |
+            <a href="estimatePartFootage/edit" <%= estimatePartFootages.query[i].id %>">  Edit </a> 
+            </td>
          </tr>
          <% } %>
 </tbody>
 </table>
 </div>
+<!-- This model is managed by Team 3-4 -->
+<!-- Abhinav Ekka -->
+<!-- Pradeep Vunnam -->
