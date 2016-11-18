@@ -4,14 +4,12 @@ var find = require('lodash.find');
 var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
 var Model = require('../models/waterproofingTopcoat.js');
-const notfoundstring = 'No such waterproofing Topcoat';
+const notfoundstring = 'No such waterproofing topcoat';
 
-// see app.js for the root request this controller handles
 // See app.js to find default view folder (e.g.,"views")
 // see app.js to find  default URI for this controller (e.g., "waterproofingPrimer")
 // Specify the handler for each required combination of URI and HTTP verb 
-// HTML5 forms can only have GET and POST methods (use POST for DELETE)
-
+// HTML5 forms can only have GET and POST methods (use POST for DEvarE)
 
 // HANDLE JSON REQUESTS --------------------------------------------
 
@@ -21,14 +19,49 @@ api.get('/findall', function(req, res){
     res.send(JSON.stringify(data));
 });
 
+api.get('/findone/:id', function(req, res){
+     res.setHeader('Content-Type', 'application/json');
+    var id = parseInt(req.params.id);
+    var data = req.app.locals.waterproofingTopcoats.query;
+    var item = find(data, { '_id': id });
+    if (!item) { return res.end(notfoundstring); }
+    res.send(JSON.stringify(item));
+});
+
+// HANDLE VIEW DISPLAY REQUESTS --------------------------------------------
+
+// GET all
+api.get('/', function(req, res) {
+    console.log("Handling GET " + req);
+    return res.render('waterproofing_topcoats/index.ejs',
+        { title: "WP Topcoat", layout: "layout.ejs" });
+});
+
+// GET create
 api.get("/create", function(req, res) {
     console.log('Handling GET /create' + req);
     res.render("waterproofing_topcoats/create.ejs",
-        { title: "WP Primers", layout: "layout.ejs" });
+        { title: "WP Topcoat", layout: "layout.ejs" });
 });
 
-// GET /delete/:id
-api.get('/delete/:id', function(req, res) {
+// GET /devare/:id
+api.get('/devare/:id', function(req, res) {
+    console.log("Handling GET /devare/:id " + req);
+    var id = parseInt(req.params.id);
+    var data = req.app.locals.waterproofingTopcoats.query;
+    var item = find(data, { '_id': id });
+    if (!item) { return res.end(notfoundstring); }
+    console.log("RETURNING VIEW FOR" + JSON.stringify(item));
+    return res.render('waterproofing_topcoats/devare.ejs',
+        {
+            title: "WP Topcoat",
+            layout: "layout.ejs",
+            waterproofingTopcoat: item
+        });
+});
+
+//Delete Get
+api.get('/delete/:id', function (req, res) {
     console.log("Handling GET /delete/:id " + req);
     var id = parseInt(req.params.id);
     var data = req.app.locals.waterproofingTopcoats.query;
@@ -37,10 +70,10 @@ api.get('/delete/:id', function(req, res) {
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
     return res.render('waterproofing_topcoats/delete.ejs',
         {
-            title: "WP Primers",
+            title: "WP Topcoat",
             layout: "layout.ejs",
-            waterproofingPrimer: item
-        });
+            waterproofingTopcoat :item  
+        });     
 });
 
 // GET /details/:id
@@ -53,9 +86,9 @@ api.get('/details/:id', function(req, res) {
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
     return res.render('waterproofing_topcoats/details.ejs',
         {
-            title: "WP Primers",
+            title: "WP Topcoat",
             layout: "layout.ejs",
-            waterproofingPrimer: item
+            waterproofingTopcoat: item
         });
 });
 
@@ -63,15 +96,15 @@ api.get('/details/:id', function(req, res) {
 api.get('/edit/:id', function(req, res) {
     console.log("Handling GET /edit/:id " + req);
     var id = parseInt(req.params.id);
-    var data = req.app.locals.waterproofingPrimers.query;
+    var data = req.app.locals.waterproofingTopcoats.query;
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
     return res.render('waterproofing_topcoats/edit.ejs',
         {
-            title: "WP Primers",
+            title: "WP Topcoat",
             layout: "layout.ejs",
-            waterproofingPrimer: item
+           waterproofingTopcoat: item
         });
 });
 
@@ -90,7 +123,7 @@ api.post('/save', function(req, res) {
     item.displayorder = parseInt(req.body.displayorder);
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
-    return res.redirect('/waterproofingTopcoats');
+    return res.redirect('/waterproofingTopcoat');
 });
 
 // POST update
@@ -108,9 +141,14 @@ api.post('/save/:id', function(req, res) {
     item.price = req.body.price;
     item.displayorder = req.body.displayorder;
     console.log("SAVING UPDATED ITEM " + JSON.stringify(item));
-    return res.redirect('/waterproofingTopcoats');
+    return res.redirect('/waterproofingTopcoat');
 });
 
+
+// DEvarE id (uses HTML5 form method POST)
+api.post('/devare/:id', function(req, res, next) {
+    console.log("Handling DEvarE request" + req);
+});
 // DELETE id (uses HTML5 form method POST)
 api.post('/delete/:id', function(req, res, next) {
     console.log("Handling DELETE request" + req);
@@ -119,11 +157,9 @@ api.post('/delete/:id', function(req, res, next) {
     var data = req.app.locals.waterproofingTopcoats.query;
     var item = remove(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
-    console.log("Deleted item " + JSON.stringify(item));
-    return res.redirect('/waterproofingTopcoats');
+    console.log("Devared item " + JSON.stringify(item));
+    return res.redirect('/waterproofingTopcoat');
 });
-// GET to this controller root URI
-api.get("/", function (req, res) {
-   res.render('waterproofing_topcoats/index.ejs');
-});
+
+
 module.exports = api;
