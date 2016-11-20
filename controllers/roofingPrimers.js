@@ -8,13 +8,21 @@ const notfoundstring = 'No such roofing Primers';
 
 // GET to this controller root URI
 api.get("/", function (req, res) {
-  return res.render('roofing_primers/index.ejs');
+    return res.render('roofing_primers/index.ejs');
 });
 
-api.get('/findall', function(req, res){
-res.setHeader('Content-Type', 'application/json');
-var data = req.app.locals.roofingPrimers.query;
-res.send(JSON.stringify(data));
+api.get('/findall', function (req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    var data = req.app.locals.roofingPrimers.query;
+    res.send(JSON.stringify(data));
+});
+api.get('/findone/:id', function (req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    var id = parseInt(req.params.id);
+    var data = req.app.locals.roofingPrimers.query;
+    var item = find(data, { '_id': id });
+    if (!item) { return res.end(notfoundstring); }
+    res.send(JSON.stringify(item));
 });
 
 
@@ -27,21 +35,14 @@ res.send(JSON.stringify(data));
 // HANDLE JSON REQUESTS --------------------------------------------
 
 
-//Base:  api/waterproofingEstimate
-
-//GET /api/waterproofingEstimate
-
-
-// GET /api/waterproofingEstimate/{id}
-
 //GET create 
 api.get('/create', function (request, response) {
-   response.render("roofing_primers/create.ejs");
+    response.render("roofing_primers/create.ejs");
 });
 
+//GET /delete/:id 
 
-
-api.get('/delete/:id', function(req, res) {
+api.get('/delete/:id', function (req, res) {
     console.log("Handling GET /delete/:id " + req);
     var id = parseInt(req.params.id);
     var data = req.app.locals.roofingPrimers.query;
@@ -57,7 +58,7 @@ api.get('/delete/:id', function(req, res) {
 });
 
 // GET /details/:id
-api.get('/details/:id', function(req, res) {
+api.get('/details/:id', function (req, res) {
     console.log("Handling GET /details/:id " + req);
     var id = parseInt(req.params.id);
     var data = req.app.locals.roofingPrimers.query;
@@ -73,7 +74,7 @@ api.get('/details/:id', function(req, res) {
 });
 
 // GET one
-api.get('/edit/:id', function(req, res) {
+api.get('/edit/:id', function (req, res) {
     console.log("Handling GET /edit/:id " + req);
     var id = parseInt(req.params.id);
     var data = req.app.locals.roofingPrimers.query;
@@ -91,7 +92,7 @@ api.get('/edit/:id', function(req, res) {
 // HANDLE EXECUTE DATA MODIFICATION REQUESTS --------------------------------------------
 
 // POST new
-api.post('/save', function(req, res) {
+api.post('/save', function (req, res) {
     console.log("Handling POST " + req);
     var data = req.app.locals.roofingPrimers.query;
     var item = new Model;
@@ -107,7 +108,7 @@ api.post('/save', function(req, res) {
 });
 
 // POST update
-api.post('/save/:id', function(req, res) {
+api.post('/save/:id', function (req, res) {
     console.log("Handling SAVE request" + req);
     var id = parseInt(req.params.id);
     console.log("Handling SAVING ID=" + id);
@@ -125,7 +126,7 @@ api.post('/save/:id', function(req, res) {
 });
 
 // DELETE id (uses HTML5 form method POST)
-api.post('/delete/:id', function(req, res, next) {
+api.post('/delete/:id', function (req, res, next) {
     console.log("Handling DELETE request" + req);
     var id = parseInt(req.params.id);
     console.log("Handling REMOVING ID=" + id);
@@ -137,6 +138,30 @@ api.post('/delete/:id', function(req, res, next) {
 });
 
 module.exports = api;
+
+/* 10 controller methods handled by controller:
+
+controllers/roofingPrimers.js
+
+2 Respond with JSON:
+
+http://127.0.0.1:8081/roofingPrimer/findall [WORKING]
+http://127.0.0.1:8081/roofingPrimer/findone/1 [WORKING]
+
+5 Respond with CRUD Views:
+
+http://127.0.0.1:8081/roofingPrimer [WORKING]
+http://127.0.0.1:8081/roofingPrimer/create [WORKING]
+http://127.0.0.1:8081/roofingPrimer/delete/1 [WORKING]
+http://127.0.0.1:8081/roofingPrimer/details/1 [WORKING]
+http://127.0.0.1:8081/roofingPrimer/edit/1 [WORKING]
+
+3 Respond by executing CRUD actions:
+
+http://127.0.0.1:8081/roofingPrimer/save [WORKING]
+http://127.0.0.1:8081/roofingPrimer/save/1 [WORKING]
+http://127.0.0.1:8081/roofingPrimer/delete/1 [WORKING]
+*/
 
 // This model is managed by Team 3-13
 // Gajula, Vineeth

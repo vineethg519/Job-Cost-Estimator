@@ -8,6 +8,7 @@
 <table class="table" border="1">
     <thead>
       <tr>
+      <th>ID</th>
         <th>Name</th>
         <th>Display Order</th>
         <th>Price</th>
@@ -19,6 +20,9 @@
     <% count=0; %>
 <% for (var i = 0; i < roofingBasecoats.query.length; i++) { %>
          <tr> <% count++; %>
+         <td>
+							<%=  roofingBasecoats.query[i]._id %>
+						</td>
             <td><%=  roofingBasecoats.query[i].name %></td>
             <td><%=  roofingBasecoats.query[i].displayorder %></td>
             <td><%=  roofingBasecoats.query[i].price %></td>

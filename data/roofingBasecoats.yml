@@ -1,10 +1,12 @@
 ---
 - name: 7419 HB - perma-gard HB
+  _id: 1
   defaultCoverageSqFt: 100
   unit: gal
   displayorder: 10
   price: 40.70
 - name: 70620 - permathane II
+  _id: 2
   defaultCoverageSqFt: 100
   unit: gal
   displayorder: 20

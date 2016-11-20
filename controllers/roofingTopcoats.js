@@ -11,23 +11,33 @@ const notfoundstring = 'No such roofing Topcoats';
 
 // GET to this controller root URI
 api.get("/", function (request, response) {
-  return response.render('roofing_topcoats/index.ejs');
+    return response.render('roofing_topcoats/index.ejs');
 });
-api.get('/findall', function(req, res){
-res.setHeader('Content-Type', 'application/json');
-var data = req.app.locals.roofingTopcoats.query;
-res.send(JSON.stringify(data));
+
+api.get('/findall', function (req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    var data = req.app.locals.roofingTopcoats.query;
+    res.send(JSON.stringify(data));
 });
+api.get('/findone/:id', function (req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    var id = parseInt(req.params.id);
+    var data = req.app.locals.roofingTopcoats.query;
+    var item = find(data, { '_id': id });
+    if (!item) { return res.end(notfoundstring); }
+    res.send(JSON.stringify(item));
+});
+
 
 // see app.js for the root request this controller handles
-
+//GET create 
 api.get('/create', function (request, response) {
-   response.render("roofing_topcoats/create.ejs");
+    response.render("roofing_topcoats/create.ejs");
 });
 
 
-
-api.get('/delete/:id', function(req, res) {
+//GET /delete/:id 
+api.get('/delete/:id', function (req, res) {
     console.log("Handling GET /delete/:id " + req);
     var id = parseInt(req.params.id);
     var data = req.app.locals.roofingTopcoats.query;
@@ -43,7 +53,7 @@ api.get('/delete/:id', function(req, res) {
 });
 
 // GET /details/:id
-api.get('/details/:id', function(req, res) {
+api.get('/details/:id', function (req, res) {
     console.log("Handling GET /details/:id " + req);
     var id = parseInt(req.params.id);
     var data = req.app.locals.roofingTopcoats.query;
@@ -59,7 +69,7 @@ api.get('/details/:id', function(req, res) {
 });
 
 // GET one
-api.get('/edit/:id', function(req, res) {
+api.get('/edit/:id', function (req, res) {
     console.log("Handling GET /edit/:id " + req);
     var id = parseInt(req.params.id);
     var data = req.app.locals.roofingTopcoats.query;
@@ -77,7 +87,7 @@ api.get('/edit/:id', function(req, res) {
 // HANDLE EXECUTE DATA MODIFICATION REQUESTS --------------------------------------------
 
 // POST new
-api.post('/save', function(req, res) {
+api.post('/save', function (req, res) {
     console.log("Handling POST " + req);
     var data = req.app.locals.roofingTopcoats.query;
     var item = new Model;
@@ -93,7 +103,7 @@ api.post('/save', function(req, res) {
 });
 
 // POST update
-api.post('/save/:id', function(req, res) {
+api.post('/save/:id', function (req, res) {
     console.log("Handling SAVE request" + req);
     var id = parseInt(req.params.id);
     console.log("Handling SAVING ID=" + id);
@@ -111,7 +121,7 @@ api.post('/save/:id', function(req, res) {
 });
 
 // DELETE id (uses HTML5 form method POST)
-api.post('/delete/:id', function(req, res, next) {
+api.post('/delete/:id', function (req, res, next) {
     console.log("Handling DELETE request" + req);
     var id = parseInt(req.params.id);
     console.log("Handling REMOVING ID=" + id);
@@ -123,6 +133,29 @@ api.post('/delete/:id', function(req, res, next) {
 });
 
 module.exports = api;
+/* 10 controller methods handled by controller:
+
+controllers/roofingTopcoats.js
+
+2 Respond with JSON:
+
+http://127.0.0.1:8081/roofingTopcoat/findall [WORKING]
+http://127.0.0.1:8081/roofingTopcoat/findone/1 [WORKING]
+
+5 Respond with CRUD Views:
+
+http://127.0.0.1:8081/roofingTopcoat [WORKING]
+http://127.0.0.1:8081/roofingTopcoat/create [WORKING]
+http://127.0.0.1:8081/roofingTopcoat/delete/1 [WORKING]
+http://127.0.0.1:8081/roofingTopcoat/details/1 [WORKING]
+http://127.0.0.1:8081/roofingTopcoat/edit/1 [WORKING]
+
+3 Respond by executing CRUD actions:
+
+http://127.0.0.1:8081/roofingTopcoat/save [WORKING]
+http://127.0.0.1:8081/roofingTopcoat/save/1 [WORKING]
+http://127.0.0.1:8081/roofingTopcoat/delete/1 [WORKING]
+*/
 
 // This model is managed by Team 3-13
 // Gajula, Vineeth
