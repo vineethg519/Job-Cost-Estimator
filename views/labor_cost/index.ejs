@@ -1,25 +1,40 @@
-
 <% console.log(estimatePartLabors.query); %>
 <div class="container">
  <h2>All entries</h2>
 
 <p>There are  <%= estimatePartLabors.query.length %> entries. <br/>
-<a href="create.ejs">Add a new one.</a></p>
+<a href="/estimatePartLabor/create">Add new one.</a></p>
 
 <table class="table" border="1">
     <thead>
       <tr>
-        <th>Subtotal</th>
-       <th>Actions</th>
+        <th>id</th>       
+       <th>type</th>
+       <th>count</th>
+       <th>hoursPerPerson </th>
+       <th>dollarsPerHour</th>
+       <th>nightsPerPerson</th>
+       <th>costPerNight</th>
+       <th>Labour Cost</th>
+        <th>Actions</th>
     </tr>
     </thead>
     <tbody>
 <% for (var i = 0; i < estimatePartLabors.query.length; i++) { %>
          <tr>
-            <td><%=  estimatePartLabors.query[i].subtotal %></td>
-            <td><a href="estimatePartLabor/delete/<%=  estimatePartLabors.query[i]._id %>"> Delete </a> |
-							<a href="estimatePartLabor/details/<%= estimatePartLabors.query[i]._id %>"> Details </a> |
-							<a href="estimatePartLabor/edit/<%=    estimatePartLabors.query[i]._id %>"> Edit </a></td>
+            <td><%=  estimatePartLabors.query[i]._id %></td>
+            <td><%=  estimatePartLabors.query[i].type %></td>
+            <td><%=  estimatePartLabors.query[i].count %></td>
+            <td><%=  estimatePartLabors.query[i].hoursPerPerson %></td>
+            <td><%=  estimatePartLabors.query[i].dollarsPerHour %></td>
+            <td><%=  estimatePartLabors.query[i].nightsPerPerson%></td>
+            <td><%=  estimatePartLabors.query[i].costPerNight %></td>
+            <td>$<%= (estimatePartLabors.query[i].count*estimatePartLabors.query[i].hoursPerPerson* estimatePartLabors.query[i].dollarsPerHour) +(estimatePartLabors.query[i].nightsPerPerson*estimatePartLabors.query[i].costPerNight)%>
+            </td>
+            <td><a href="estimatePartLabor/delete/<%= estimatePartLabors.query[i]._id %>"> <button type="button" class="btn btn-danger"> Delete </button></a>
+            <a href="estimatePartLabor/details/<%= estimatePartLabors.query[i]._id %>"> <button type="button" class="btn btn-info"> Details </button> </a>
+            <a href="estimatePartLabor/edit/<%= estimatePartLabors.query[i]._id%>"> <button type="button" class="btn btn-warning"> Edit </button> </a>
+            </td>
          </tr>
          <% } %>
 </tbody>

@@ -1,3 +1,57 @@
+<br/>
+<br/>
+<h2>Edit estimatePartLabor product</h2>
+<div class="content">
+	<div>
+		<form method="POST" action="/estimatePartLabor/save/<%= estimatePartLabor._id %>">
+
+			<div class="form-group" id=frm>
+				<label for="_id">ID</label>
+				<input type="number" class="form-control" id="_id" name="_id" value="<%= estimatePartLabor._id %>" required disabled>
+			</div>
+
+			<div class="form-group">
+				<label for="type">type</label>
+				<input type="text" class="form-control" id="type" name="type" value="<%= estimatePartLabor.type %>" required>
+			</div>
+
+			<div class="form-group">
+				<label for="count">Count</label>
+				<input type="text" class="form-control" id="count" name="count" value="<%= estimatePartLabor.count %>" required>
+			</div>
+
+			<div class="form-group">
+				<label for="hoursPerPerson">hoursPerPerson</label>
+				<input type="number" class="form-control" id="hoursPerPerson" name="hoursPerPerson" value="<%= estimatePartLabor.hoursPerPerson %>" required>
+			</div>
+
+			<div class="form-group">
+				<label for="dollarsPerHour">dollarsPerHour</label>
+				<input type="number" class="form-control" id="dollarsPerHour" name="dollarsPerHour" value="<%= estimatePartLabor.dollarsPerHour %>"
+					required>
+			</div>
+
+            <div class="form-group">
+				<label for="nightsPerPerson">nightsPerPerson</label>
+				<input type="number" class="form-control" id="nightsPerPerson" name="nightsPerPerson" value="<%= estimatePartLabor.nightsPerPerson %>"
+					required>
+			</div>
+
+             <div class="form-group">
+				<label for="costPerNight">costPerNight</label>
+				<input type="number" class="form-control" id="costPerNight" name="costPerNight" value="<%= estimatePartLabor.costPerNight %>"
+					required>
+			</div>
+
+
+			<input type="submit" value="Save" class="btn btn-primary" />
+		</form>
+		<br/>
+		<form method="get" action="/estimatePartLabor">
+			<input type="submit" value="Return to list" class="btn btn-caution" />
+		</form>
+	</div>
+</div>
 <!--This view is managed by Team 3-10-->
 <!--Vineetha Boppishetty-->
 <!--Renu Kappara-->
