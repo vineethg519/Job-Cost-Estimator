@@ -28,9 +28,9 @@
             <td><%=  roofingBasecoats.query[i].price %></td>
             <td><%=  roofingBasecoats.query[i].unit %></td>
             <td>
-						<a href="roofingBasecoat/delete/<%=  count%>">	<button type="button" class="btn btn-danger"> Delete </button></a> 
-            <a href="roofingBasecoat/details/<%=  count%>">	<button type="button" class="btn btn-info"> Details </button></a> 
-						<a href="roofingBasecoat/edit/<%=  count%>">	<button type="button" class="btn btn-warning"> Edit </button></a> 
+						<a href="roofingBasecoat/delete/<%=  count%>">	<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete </button></a> 
+            <a href="roofingBasecoat/details/<%=  count%>">	<button type="button" class="btn btn-info"> <span class="glyphicon glyphicon-list-alt"></span> Details </button></a> 
+						<a href="roofingBasecoat/edit/<%=  count%>">	<button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Edit </button></a> 
 						</td>
          </tr>
          <% } %>
