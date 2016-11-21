@@ -1,3 +1,39 @@
+<br/>
+<br/>
+<h2>Details of Estimate Part Mileage</h2>
+<br/>
+<br/>
+<table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+       <th>ID</th>
+       <th>Description</th>
+       <th>Number Of Vehicles</th>
+       <th>Start Location</th>
+       <th>End Location</th>
+       <th>Miles Per Drive</th>
+       <th>Dollars Per Mile</th>
+       <th>Cost</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> <%= estimatePartMileage._id %></td>
+            <td> <%= estimatePartMileage.description %></td>
+            <td> <%= estimatePartMileage.numberOfVehicles %></td>
+            <td> <%= estimatePartMileage.startLocation %></td>
+            <td> <%= estimatePartMileage.endLocation %></td>
+            <td> <%= estimatePartMileage.milesPerDrive %></td>
+            <td> <%= mileageRateNow.dollarsPerMile %></td>
+            <td> <%= estimatePartMileage.numberOfVehicles*estimatePartMileage.milesPerDrive*mileageRateNow.dollarsPerMile %></td>
+        </tr>
+</tbody>
+</table>
+
+<br/>
+<form method="get" action="/estimatePartMileage">
+	<input type="submit" value="Return to list" class="btn btn-caution" />
+</form>
 <!--This view is managed by Team 5-11
 Monish Verma
 Abhilash Pochampally
