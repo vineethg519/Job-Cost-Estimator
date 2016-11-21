@@ -1,12 +1,16 @@
 var mongoose = require('mongoose')
     , Schema = mongoose.Schema
-    , EntryFootage = require('./entryFootage.js')
+	, EntryFootage = require('./entryFootage.js')
 
 var EstimatePartFootageSchema = new Schema({
-    entries: [{
+	entries: [{
         entry: { type: Schema.Types.ObjectId, ref: EntryFootage },
     }],
-    sqft: { type: Number, required: true, default: 0 }
+    _id: { type: Number, required: true },
+	sqft: { type: Number, required: true },
+	length: { type: Number, required: true },
+	width: { type: Number, required: true },
+	displayorder: { type: Number, required: true }
 })
 
 var estimatePartFootage = mongoose.model('EstimatePartFootage', EstimatePartFootageSchema)

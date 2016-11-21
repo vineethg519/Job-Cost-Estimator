@@ -2,16 +2,32 @@
   {
     "entries": [
       {
-        "entry": {
+        "_id":1,
           "description": "misc cost 1",
           "cost": 100
-        },
-        "entry": {
+      },
+
+      {
+        "_id":2,
           "description": "misc cost 2",
           "cost": 200
-        }
+      },
+      {
+        "_id":3,
+          "description": "misc cost 3",
+          "cost": 300
+      },
+      {
+        "_id":4,
+          "description": "misc cost 4",
+          "cost": 400
+      },
+      {
+        "_id":5,
+          "description": "misc cost 5",
+          "cost": 500
       }
     ],
-    "subtotal": 300
+    "subtotal" : 1200
   }
 ]

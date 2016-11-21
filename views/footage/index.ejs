@@ -4,22 +4,37 @@
  <h2>All entries</h2>
 
 <p>There are  <%= estimatePartFootages.query.length %> entries. <br/>
-<a href="create.ejs">Add a new one.</a></p>
+<a href="estimatePartFootage/create">Add a new one.</a></p>
 
 <table class="table" border="1">
-    <thead>
-      <tr>
-        <th>SqFt</th>
-       <th>Actions</th>
-    </tr>
-    </thead>
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>SqFt</th>
+			<th>Length</th>
+			<th>Width</th>
+			<th>Display Order</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
     <tbody>
-<% for (var i = 0; i < estimatePartFootages.query.length; i++) { %>
-         <tr>
-            <td><%=  estimatePartFootages.query[i].sqft %></td>
-            <td>Delete  Details  Edit</td>
-         </tr>
-         <% } %>
-</tbody>
+	<% for (var i = 0; i < estimatePartFootages.query.length; i++) { %>
+	<tr>
+		<td><%=  estimatePartFootages.query[i]._id %></td>
+		<td><%=  estimatePartFootages.query[i].sqft %></td>
+		<td><%=  estimatePartFootages.query[i].length %></td>
+		<td><%=  estimatePartFootages.query[i].width %></td>
+		<td><%=  estimatePartFootages.query[i].displayorder %></td>
+		<td>
+			<a href="estimatePartFootage/delete/<%= estimatePartFootages.query[i]._id %>"> Delete </a> | 
+            <a href="estimatePartFootage/details/<%= estimatePartFootages.query[i]._id %>"> Details</a> |
+            <a href="estimatePartFootage/edit/<%= estimatePartFootages.query[i]._id %>">  Edit </a> 
+		</td>
+	</tr>
+	<% } %>
+	</tbody>
 </table>
 </div>
+<!-- This model is managed by Team 3-4 -->
+<!-- Abhinav Ekka -->
+<!-- Pradeep Vunnam -->
