@@ -49,7 +49,7 @@ api.get('/delete/:id', function(req, res) {
         {
             title: "WP Primers",
             layout: "layout.ejs",
-            waterproofingPrimer: item
+            estimatePartAbouts: item
         });
 });
 
@@ -65,7 +65,7 @@ api.get('/details/:id', function(req, res) {
         {
             title: "WP Primers",
             layout: "layout.ejs",
-            waterproofingPrimer: item
+            estimatePartAbouts: item
         });
 });
 
@@ -82,7 +82,7 @@ api.get('/edit/:id', function(req, res) {
         {
             title: "WP Primers",
             layout: "layout.ejs",
-            waterproofingPrimer: item
+            estimatePartAbouts: item
         });
 });
 
