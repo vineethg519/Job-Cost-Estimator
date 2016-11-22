@@ -1,10 +1,11 @@
 
 <% console.log(estimatePartAggregates.query); %>
 <div class="container">
+<br/><br/>
  <h2>All entries</h2>
 
 <p>There are  <%= estimatePartAggregates.query.length %> entries. <br/>
-
+<br/>
 <a href="estimatePartAggregate/create"><button type="button" class="btn btn-primary">Add a new one</button></a></p>
 
 <table class="table" border="1">
@@ -33,9 +34,9 @@
             <td> <%= estimatePartAggregates.query[i].subtotal %></td>
 
             <td>
-            <a href="estimatePartAggregate/delete/<%=  estimatePartAggregates.query[i]._id %>"> <button type="button" class="btn btn-danger">Delete</button> </a> 
-							<a href="estimatePartAggregate/details/<%= estimatePartAggregates.query[i]._id %>"> <button type="button" class="btn btn-info">Details</button> </a> 
-							<a href="estimatePartAggregate/edit/<%=    estimatePartAggregates.query[i]._id %>"> <button type="button" class="btn btn-warning">Edit</button> </a>
+                <a href="estimatePartAggregate/delete/<%=  estimatePartAggregates.query[i]._id %>"> <button type="button" class="btn btn-danger">Delete</button> </a> 
+			    <a href="estimatePartAggregate/details/<%= estimatePartAggregates.query[i]._id %>"> <button type="button" class="btn btn-info">Details</button> </a> 
+			    <a href="estimatePartAggregate/edit/<%=    estimatePartAggregates.query[i]._id %>"> <button type="button" class="btn btn-warning">Edit</button> </a>
             </td>
          </tr>
          
