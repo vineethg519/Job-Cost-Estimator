@@ -13,6 +13,9 @@ const notfoundstring = 'estimatePartAbouts';
 api.get("/", function (request, response) {
   response.render("about/index.ejs");
 });
+api.get('/create', function (request, response) {
+   response.render("about/create.ejs");
+});
 
 api.get('/findall', function(req, res){
     res.setHeader('Content-Type', 'application/json');
@@ -49,7 +52,7 @@ api.get('/delete/:id', function(req, res) {
         {
             title: "WP Primers",
             layout: "layout.ejs",
-            estimatePartAbouts: item
+            estimatePartAbout: item
         });
 });
 
@@ -65,7 +68,7 @@ api.get('/details/:id', function(req, res) {
         {
             title: "WP Primers",
             layout: "layout.ejs",
-            estimatePartAbouts: item
+            estimatePartAbout: item
         });
 });
 
@@ -82,7 +85,7 @@ api.get('/edit/:id', function(req, res) {
         {
             title: "WP Primers",
             layout: "layout.ejs",
-            estimatePartAbouts: item
+            estimatePartAbout: item
         });
 });
 

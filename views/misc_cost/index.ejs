@@ -3,25 +3,38 @@
 <div class="container">
  <h2>All entries</h2>
 
-<p>There are  <%= estimatePartMiscs.query.length %> entries. <br/>
-<a href="create.ejs">Add a new one.</a></p>
+<p>There are  <%= estimatePartMiscs.query[0].entries.length %> entries. <br/>
+<a class="btn btn-info" href="estimatePartMisc/create"> New Entry</a></p>
 
 <table class="table" border="1">
     <thead>
       <tr>
-        <th>Subtotal</th>
+       <th>ID</th>
+       <th>Description</th>
+       <th>Cost</th>
        <th>Actions</th>
     </tr>
     </thead>
     <tbody>
-<% for (var i = 0; i < estimatePartMiscs.query.length; i++) { %>
-         <tr>
-            <td><%=  estimatePartMiscs.query[i].subtotal %></td>
-           <td>
-            <a href="estimatePartMisc/delete/<%=  estimatePartMiscs.query[i]._id %>"> Delete </a> |
-							<a href="estimatePartMisc/details/<%= estimatePartMiscs.query[i]._id %>"> Details </a> |
-							<a href="estimatePartMisc/edit/<%=    estimatePartMiscs.query[i]._id %>"> Edit </a>
+	<% for (var i = 0; i < estimatePartMiscs.query.length; i++) { 
+    var totalCost = 0;
+     for(var j=0; j<estimatePartMiscs.query[i].entries.length;j++){
+        var entry = estimatePartMiscs.query[i].entries[j];
+      %>
+        <tr>
+            <td> <%= entry._id %></td>
+            <td> <%= entry.description %></td>
+            <td> $<%= entry.cost %></td>
+            <% totalCost += parseInt(entry.cost) %>
+            <td>
+              <a href="estimatePartMisc/details/<%= entry._id %>" >Details</a> 
+              <a href="estimatePartMisc/edit/<%= entry._id %>" >Edit </a> 
+              <a href="estimatePartMisc/delete/<%= entry._id %>" >Delete </a> </td>
             </td>
+        </tr>
+    <%  } %>
+         <tr>
+            <td colspan="4" > <strong> Total Estimated Miscellaneous Cost :  <span id="fnlCost" > $<%=  totalCost %> </strong></span> </tbody></td>
          </tr>
          <% } %>
 </tbody>

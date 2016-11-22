@@ -3,7 +3,7 @@
  <h2>All entries</h2>
 
 <p>There are  <%= estimatePartAbouts.query.length %> entries. <br/>
-<a href="create.ejs">Add a new one.</a></p>
+<a href="/estimatePartAbout/create">Add a new one.</a></p>
 
 <table class="table" border="1">
     <thead>
@@ -22,9 +22,9 @@
             <td><%=  estimatePartAbouts.query[i].city %></td>
             <td>Delete  Details  Edit</td>
             <td>
-            <a href="/estimatePartAbouts/delete/<%= c %>">Delete</a>
-            <a href="/estimatePartAbouts/edit/<%= c %>">Edit</a> 
-            <a href="/estimatePartAbouts/details/<%= c %>">Details</a>
+            <a href="/estimatePartAbout/delete/<%= c %>">Delete</a>
+            <a href="/estimatePartAbout/edit/<%= c %>">Edit</a> 
+            <a href="/estimatePartAbout/details/<%= c %>">Details</a>
             </td>
          </tr>
          <% } %>

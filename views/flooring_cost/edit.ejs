@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!-- This model is managed by Team 3-5
  AjithReddy Pati
 Sai Rama Rao Nayeni -->
@@ -8,6 +9,64 @@ Sai Rama Rao Nayeni -->
 
 <h3> editing the page</h3>
 >>>>>>> 19b6c2412aa9d4a52d073c20848a27e43ad217dc
+=======
+<br/>
+<br/>
+<h2>Edit part Flooring</h2>
+<div class="content">
+	<div>
+		<form method="POST" action="/estimatePartFlooring/save/<%= estimatePartFlooring._id %>">
+
+			<div class="form-group" id=frm>
+				<label for="_id">ID</label>
+				<input type="number" class="form-control" id="_id" name="_id" value="<%= estimatePartFlooring._id %>" required disabled>
+			</div>
+
+			<div class="form-group">
+				<label for="floorSystemType">Floor type</label>
+				<input type="text" class="form-control" id="floorSystemType" name="floorSystemType" value="<%= estimatePartFlooring.floorSystemType %>" required>
+			</div>
+
+			<div class="form-group">
+				<label for="usesUrethane">usesUrethane</label>
+				<input type="boolean" class="form-control" id="usesUrethane" name="usesUrethane" value="<%= estimatePartFlooring.usesUrethane %>" required>
+			</div>
+			<div class="form-group">
+				<label for="urethaneProductSelection">urethaneProductSelection</label>
+				<input type="text" class="form-control" id="urethaneProductSelection" name="urethaneProductSelection" value="<%= estimatePartFlooring.urethaneProductSelection %>" required>
+			</div>
+			<div class="form-group">
+				<label for="urethaneCoverageSqFt">urethaneCoverageSqFt</label>
+				<input type="number" class="form-control" id="urethaneCoverageSqFt" name="urethaneCoverageSqFt" value="<%= estimatePartFlooring.urethaneCoverageSqFt %>" required>
+			</div>
+			<div class="form-group">
+				<label for="usesEpoxy">usesEpoxy</label>
+				<input type="boolean" class="form-control" id="usesEpoxy" name="usesEpoxy" value="<%= estimatePartFlooring.usesEpoxy %>" required>
+			</div>
+			<div class="form-group">
+				<label for="expoxyProductSelection">expoxyProductSelection</label>
+				<input type="text" class="form-control" id="expoxyProductSelection" name="expoxyProductSelection" value="<%= estimatePartFlooring.expoxyProductSelection %>" required>
+			</div>
+			<div class="form-group">
+				<label for="expoxyCoverageSqFt">expoxyCoverageSqFt</label>
+				<input type="number" class="form-control" id="expoxyCoverageSqFt" name="expoxyCoverageSqFt" value="<%= estimatePartFlooring.expoxyCoverageSqFt %>" required>
+			</div>
+			<div class="form-group">
+				<label for="subtotal">Sub Total</label>
+				<input type="text" class="form-control" id="subtotal" name="subtotal" value="<%= estimatePartFlooring.subtotal %>" required>
+			</div>
+
+
+			<input type="submit" value="Save" class="btn btn-primary" />
+		</form>
+		<br/>
+		<form method="get" action="/estimatePartFlooring">
+			<input type="submit" value="Return to list" class="btn btn-caution" />
+		</form>
+	</div>
+</div>
+
+>>>>>>> 4d854f7b679ec52f1e5f3e0bab914072771e8dbc
 <!--This model is managed by Team 3-5
 Sai Rama Rao Nayeni
 AjithReddy Pati -->
