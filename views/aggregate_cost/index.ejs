@@ -3,9 +3,9 @@
 <div class="container">
  <h2>All entries</h2>
 
-<p>There are  <%= estimatePartAggregates.query[0].entries.length %> entries. <br/>
+<p>There are  <%= estimatePartAggregates.query.length %> entries. <br/>
 
-				<a href="estimatePartAggregate/create">Add a new one.</a></p>
+<a href="estimatePartAggregate/create"><button type="button" class="btn btn-primary">Add a new one</button></a></p>
 
 <table class="table" border="1">
     <thead>
@@ -22,27 +22,23 @@
     </thead>
     <tbody>
 
-<% for (var i = 0; i < estimatePartAggregates.query.length; i++) { 
+<% for (var i = 0; i < estimatePartAggregates.query.length; i++){ %>
     
-     for(var j=0; j<estimatePartAggregates.query[i].entries.length;j++){
-        var entry = estimatePartAggregates.query[i].entries[j];
-        
-      %>
         <tr>
-            <td> <%= entry._id %></td>
-            <td> <%= entry.isUsed %></td>
-            <td> <%= entry.aggregateTypeSelection %></td>
-            <td> <%= entry.aggregateMaterialSelection %></td>
-            <td> <%= entry.coverageSqFt %></td>
-            <td> <%= entry.subtotal %></td>
+            <td> <%= estimatePartAggregates.query[i]._id %></td>
+            <td> <%= estimatePartAggregates.query[i].isUsed %></td>
+            <td> <%= estimatePartAggregates.query[i].aggregateTypeSelection %></td>
+            <td> <%= estimatePartAggregates.query[i].aggregateMaterialSelection %></td>
+            <td> <%= estimatePartAggregates.query[i].coverageSqFt %></td>
+            <td> <%= estimatePartAggregates.query[i].subtotal %></td>
 
             <td>
-            <a href="estimatePartAggregate/delete/<%=  entry._id %>"> Delete </a> 
-							<a href="estimatePartAggregate/details/<%= entry._id %>"> Details </a> 
-							<a href="estimatePartAggregate/edit/<%=    entry._id %>"> Edit </a>
+            <a href="estimatePartAggregate/delete/<%=  estimatePartAggregates.query[i]._id %>"> <button type="button" class="btn btn-danger">Delete</button> </a> 
+							<a href="estimatePartAggregate/details/<%= estimatePartAggregates.query[i]._id %>"> <button type="button" class="btn btn-info">Details</button> </a> 
+							<a href="estimatePartAggregate/edit/<%=    estimatePartAggregates.query[i]._id %>"> <button type="button" class="btn btn-warning">Edit</button> </a>
             </td>
          </tr>
-         <% } %>
+         
          <% } %>
             
 </tbody>
