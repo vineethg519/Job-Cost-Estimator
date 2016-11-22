@@ -13,26 +13,26 @@
 
                     <div class="form-group">
                     <label for="usesAggregate">Uses Aggregate?</label>
-                    <input type="checkbox" class="form-control" id="usesAggregate" name="usesAggregate" />
+                    <input type="checkbox" class="form-control" id="usesAggregate" name="usesAggregate" <% if(estimatePartAggregate.isUsed == 'true') { %> checked <% } %>/>
                     </div>
 
                     <div class="form-group">
                     <label for="aggregateTypeSelection">Aggregate Type</label>
                     <div class="funkyradio">
                             <div class="funkyradio-primary">
-                                <input type="radio" name="radio" id="Sand" value="Sand" />
+                                <input type="radio" name="radio" id="Sand" value="Sand" <% if(estimatePartAggregate.aggregateTypeSelection == 'Sand') {%> checked <% } %>/>
                                 <label for="Sand">Sand</label>
                             </div>
                             <div class="funkyradio-success">
-                                <input type="radio" name="radio" id="Quartz" value="Quartz" />
+                                <input type="radio" name="radio" id="Quartz" value="Quartz" <% if(estimatePartAggregate.aggregateTypeSelection == 'Quartz') {%> checked <% } %>/>
                                 <label for="Quartz">Quartz</label>
                             </div>
                             <div class="funkyradio-warning">
-                                <input type="radio" name="radio" id="Flake" value="Flake" />
+                                <input type="radio" name="radio" id="Flake" value="Flake" <% if(estimatePartAggregate.aggregateTypeSelection == 'Flake') {%> checked <% } %>/>
                                 <label for="Flake">Flake</label>
                             </div>
                             <div class="funkyradio-danger">
-                                <input type="radio" name="radio" id="Glass" value="Glass" />
+                                <input type="radio" name="radio" id="Glass" value="Glass" <% if(estimatePartAggregate.aggregateTypeSelection == 'Glass') {%> checked <% } %>/>
                                 <label for="Glass">Glass Beads</label>
                             </div>
                         </div>
@@ -40,13 +40,13 @@
 
                     <div class="form-group">
                         <label for="aggregateMaterialSelection">Aggregate Material Selection</label>
-                        <input type="number" class="form-control" id="aggregateMaterialSelection" name="aggregateMaterialSelection"  >
+                        <input type="number" class="form-control" id="aggregateMaterialSelection" name="aggregateMaterialSelection" value="<%= estimatePartAggregate.aggregateMaterialSelection %>" >
 
                     </div>
                     
                     <div class="form-group">
                         <label for="coverageSqFt">Coverage Square per feet</label>
-                        <input type="number" class="form-control" id="coverageSqFt" name="coverageSqFt"  >
+                        <input type="number" class="form-control" id="coverageSqFt" name="coverageSqFt" value="<%= estimatePartAggregate.coverageSqFt %>" >
 
                     </div>
 
