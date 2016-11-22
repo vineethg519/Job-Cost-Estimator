@@ -5,7 +5,7 @@
 
 <p>There are  <%= estimatePartAggregates.query.length %> entries. <br/>
 
-<a href="estimatePartAggregate/create">Add a new one.</a></p>
+<a href="estimatePartAggregate/create"><button type="button" class="btn btn-primary">Add a new one</button></a></p>
 
 <table class="table" border="1">
     <thead>
@@ -33,9 +33,9 @@
             <td> <%= estimatePartAggregates.query[i].subtotal %></td>
 
             <td>
-            <a href="estimatePartAggregate/delete/<%=  estimatePartAggregates.query[i]._id %>"> Delete </a> 
-							<a href="estimatePartAggregate/details/<%= estimatePartAggregates.query[i]._id %>"> Details </a> 
-							<a href="estimatePartAggregate/edit/<%=    estimatePartAggregates.query[i]._id %>"> Edit </a>
+            <a href="estimatePartAggregate/delete/<%=  estimatePartAggregates.query[i]._id %>"> <button type="button" class="btn btn-danger">Delete</button> </a> 
+							<a href="estimatePartAggregate/details/<%= estimatePartAggregates.query[i]._id %>"> <button type="button" class="btn btn-info">Details</button> </a> 
+							<a href="estimatePartAggregate/edit/<%=    estimatePartAggregates.query[i]._id %>"> <button type="button" class="btn btn-warning">Edit</button> </a>
             </td>
          </tr>
          
