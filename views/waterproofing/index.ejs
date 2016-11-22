@@ -71,9 +71,9 @@ Misc : <% include ..\..\views\estimateparts\est-misc %><br/>
 
 <div class="panel-body">
 <%= waterproofingEstimates.comment %>
-<a href="/waterproofingEstimate/delete/<%= waterproofingEstimates.query[0]._id %>">delete</a> |
-<a href="/waterproofingEstimate/details/<%= waterproofingEstimates.query[0]._id %>">details</a> |
-<a href="/waterproofingEstimate/edit/<%= waterproofingEstimates.query[0]._id %>">edit</a>
+<a class = "btn btn-danger" href="/waterproofingEstimate/delete/<%= waterproofingEstimates.query[0]._id %>"><i class="glyphicon glyphicon-trash"></i>Delete</a> 
+<a class = "btn btn-info" href="/waterproofingEstimate/details/<%= waterproofingEstimates.query[0]._id %>"><i class="glyphicon glyphicon-list-alt"></i>Details</a> 
+<a class = "btn btn-warning" href="/waterproofingEstimate/edit/<%= waterproofingEstimates.query[0]._id %>"><i class="glyphicon glyphicon-edit"></i>Edit</a>
 </div>
 </div>
 <% } %>
