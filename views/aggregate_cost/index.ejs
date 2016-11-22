@@ -1,30 +1,47 @@
-<% include ..\..\views\header.ejs %>
+
 <% console.log(estimatePartAggregates.query); %>
 <div class="container">
+<br/><br/>
  <h2>All entries</h2>
 
-<p>There are  <%= estimatePartAggregates.query.length %>  entries. <br/>
-<a href="estimatePartAggregate/create">Add a new one.</a></p>
+<p>There are  <%= estimatePartAggregates.query.length %> entries. <br/>
+<br/>
+<a href="estimatePartAggregate/create"><button type="button" class="btn btn-primary">Add a new one</button></a></p>
 
 <table class="table" border="1">
     <thead>
       <tr>
+      <th>ID</th>
         <th>isUsed?</th>
         <th>Type</th>
+        <th>Material</th>
+        <th>coverageSqFt</th>
+        <th>Subtotal</th>
        <th>Actions</th>
+      
     </tr>
     </thead>
     <tbody>
-		<% for (var i = 0; i < estimatePartAggregates.query.length; i++) { %>
-         <tr>
-            <td><%=  estimatePartAggregates.query[i].isUsed %></td>
-            <td><%=  estimatePartAggregates.query[i].aggregateTypeSelection %></td>
-            <td><a href="estimatePartAggregate/delete/<%= estimatePartAggregates.query[i]._id %>"> Delete </a>|
-				<a href="estimatePartAggregate/details/<%= estimatePartAggregates.query[i]._id %>">Details</a> |
-				<a href="estimatePartAggregate/edit/<%= estimatePartAggregates.query[i]._id %>">Edit</a>
-			</td>
+
+<% for (var i = 0; i < estimatePartAggregates.query.length; i++){ %>
+    
+        <tr>
+            <td> <%= estimatePartAggregates.query[i]._id %></td>
+            <td> <%= estimatePartAggregates.query[i].isUsed %></td>
+            <td> <%= estimatePartAggregates.query[i].aggregateTypeSelection %></td>
+            <td> <%= estimatePartAggregates.query[i].aggregateMaterialSelection %></td>
+            <td> <%= estimatePartAggregates.query[i].coverageSqFt %></td>
+            <td> <%= estimatePartAggregates.query[i].subtotal %></td>
+
+            <td>
+                <a href="estimatePartAggregate/delete/<%=  estimatePartAggregates.query[i]._id %>"> <button type="button" class="btn btn-danger">Delete</button> </a> 
+			    <a href="estimatePartAggregate/details/<%= estimatePartAggregates.query[i]._id %>"> <button type="button" class="btn btn-info">Details</button> </a> 
+			    <a href="estimatePartAggregate/edit/<%=    estimatePartAggregates.query[i]._id %>"> <button type="button" class="btn btn-warning">Edit</button> </a>
+            </td>
          </tr>
+         
          <% } %>
+            
 </tbody>
 </table>
 </div>
