@@ -1,7 +1,26 @@
 [
   {
+    "_id":1,
     "roofType": "Metal",
     "processType": "Roof Coatings",
-    "subtotal": 33
+    "subtotal": 34
+  },
+  {
+    "_id":2,
+    "roofType": "iron",
+    "processType": "Roofing",
+    "subtotal": 45
+  },
+  {
+    "_id":3,
+    "roofType": "steel",
+    "processType": " Coatings",
+    "subtotal": 56
+  },
+  {
+    "_id":4,
+    "roofType": "platinum",
+    "processType": "roofcost",
+    "subtotal": 67
   }
 ]
