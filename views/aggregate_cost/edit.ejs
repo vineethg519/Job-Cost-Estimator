@@ -1,65 +1,67 @@
-h2>Edit Square Aggregate</h2>
+<br/><br/>
+<h2>Edit  Aggregate</h2>
 <br/>
 <br/>
 <a href="/estimatePartAggregate" class="btn btn-info" >Return to list</a>
 <br/><br/>
 <form method="POST" action="/estimatePartAggregate/save/<%= estimatePartAggregate._id %>">
-<table class="table table-hover table-bordered">
-    <tr><th>ID</th> <td> <%= estimatePartAggregate._id %>  </td></tr>
-	<tr><th>isUsed?</th> <td><input type="text" class="form-control" name="description" value="<%= estimatePartAggregate.isUsed %>">  </input></td></tr>
-	<tr><th>Type</th> <td><input type="text" class="form-control" name="length" value="<%= estimatePartAggregate.aggregateTypeSelection  %>"> </input></td></tr>
-	<tr><th>Material</th> <td><input type="text" class="form-control" name="width" value="<%= estimatePartAggregate.aggregateMaterialSelection %>"> </input></td></tr>
-	<tr><th>coverageSqFt</th> <td><input type="number" class="form-control" name="width" value="<%= estimatePartAggregate.coverageSqFt %>"> </input></td></tr>
-	<tr><th>Subtotal</th> <td><input type="number" class="form-control" name="width" value="<%= estimatePartAggregate.subtotal %>"> </input></td></tr>
+      <div class="form-group" id=frm>
+                        <label for="_id">ID</label>
+                        <input type="number" class="form-control" id="_id" name="_id" value="<%= estimatePartAggregate._id %>" required readonly>
+                    </div>
 
-
+<<<<<<< HEAD
 <<<<<<< HEAD
                 <div class="form-group">
                 <label for="usesAggregate">Uses Aggregate?</label>
                 <input type="checkbox" class="form-control" id="usesAggregate" name="usesAggregate" value="<%= estimatePartAggregate.isUsed %>">
                 </div>
+=======
+>>>>>>> 791a35409c00a279f69ca2c1c08979b770114a55
 
-                <div class="form-group">
-                <label for="aggregateTypeSelection">Aggregate Type</label>
-                <div class="funkyradio">
-                    <div class="funkyradio-primary">
-                        <input type="radio" name="radio" id="Sand" checked/>
-                        <label for="Sand">Sand</label>
+                    <div class="form-group">
+                    <label for="usesAggregate">Uses Aggregate?</label>
+                    <input type="checkbox" class="form-control" id="usesAggregate" name="usesAggregate" />
                     </div>
-                    <div class="funkyradio-success">
-                        <input type="radio" name="radio" id="Quartz" />
-                        <label for="Quartz">Quartz</label>
-                    </div>
-                    <div class="funkyradio-warning">
-                        <input type="radio" name="radio" id="Flake" />
-                        <label for="Flake">Flake</label>
-                    </div>
-                    <div class="funkyradio-danger">
-                        <input type="radio" name="radio" id="Glass" />
-                    <label for="Glass">Glass Beads</label>
-                    </div>
-                </div>
-                </div>
 
-                <div class="form-group">
-                <label for="aggregateMaterialSelection">Aggregate Material Selection</label>
-                <input type="input" class="form-control" id="aggregateMaterialSelection" name="aggregateMaterialSelection" value="<%= estimatePartAggregate.aggregateMaterialSelection %>">
+                    <div class="form-group">
+                    <label for="aggregateTypeSelection">Aggregate Type</label>
+                    <div class="funkyradio">
+                            <div class="funkyradio-primary">
+                                <input type="radio" name="radio" id="Sand" value="Sand" />
+                                <label for="Sand">Sand</label>
+                            </div>
+                            <div class="funkyradio-success">
+                                <input type="radio" name="radio" id="Quartz" value="Quartz" />
+                                <label for="Quartz">Quartz</label>
+                            </div>
+                            <div class="funkyradio-warning">
+                                <input type="radio" name="radio" id="Flake" value="Flake" />
+                                <label for="Flake">Flake</label>
+                            </div>
+                            <div class="funkyradio-danger">
+                                <input type="radio" name="radio" id="Glass" value="Glass" />
+                                <label for="Glass">Glass Beads</label>
+                            </div>
+                        </div>
+                    </div>
 
-                </div>
-                <div class="form-group">
-                <label for="coverageSqFt">Coverage Square per feet</label>
-                <input type="number" class="form-control" id="coverageSqFt" name="coverageSqFt" value="<%= estimatePartAggregate.coverageSqFt %>">
+                    <div class="form-group">
+                        <label for="aggregateMaterialSelection">Aggregate Material Selection</label>
+                        <input type="number" class="form-control" id="aggregateMaterialSelection" name="aggregateMaterialSelection"  >
 
-                </div>
-                <input type="submit" value="Save" class="btn btn-primary" />
-                </div>
-			
-			
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="coverageSqFt">Coverage Square per feet</label>
+                        <input type="number" class="form-control" id="coverageSqFt" name="coverageSqFt"  >
+
+                    </div>
+
+                    <input type="submit" value="Post entry" class="btn btn-primary">
+            </div>
 		</form>
-		<br/>
-		<form method="get" action="/estimatePartAggregate">
-			<input type="submit" value="Return to list" class="btn btn-caution" />
-		</form>
+<<<<<<< HEAD
 	</div>
 </div>
 =======
@@ -78,3 +80,6 @@ h2>Edit Square Aggregate</h2>
 </table>
 </form>
 >>>>>>> 69c194631461adf6491ab859f518ce761e7c1275
+=======
+
+>>>>>>> 791a35409c00a279f69ca2c1c08979b770114a55

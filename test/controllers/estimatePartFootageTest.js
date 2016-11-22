@@ -5,10 +5,10 @@ var expect = require("chai").expect;
 const appport = 8081;
 const appname = "jce";
 const testId = 1;
-const resourceName = "waterproofingEstimates";  
+const resourceName = "estimatePartFootage";  
 var app = express();
 
-describe("Materials - Waterproofing estimate unit test",function(){
+describe("Parts - PartFootage estimate unit test",function(){
 
   it("should return index page",function(done){
     request(app)
@@ -52,6 +52,3 @@ describe("Materials - Waterproofing estimate unit test",function(){
   });
 
 });
-/* This model is managed by Team 3-3
- Phani Lakshman Yarlagadda
- Venkata Prasant Poodipeddi*/
