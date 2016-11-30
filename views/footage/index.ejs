@@ -12,9 +12,9 @@
 	<thead>
 		<tr>
 			<th>ID</th>
-			<th>SqFt</th>
 			<th>Length</th>
 			<th>Width</th>
+			<th>SqFt</th>
 			<th>Display Order</th>
 			<th>Actions</th>
 		</tr>
@@ -23,9 +23,9 @@
 	<% for (var i = 0; i < estimatePartFootages.query.length; i++) { %>
 	<tr>
 		<td><%=  estimatePartFootages.query[i]._id %></td>
-		<td><%=  estimatePartFootages.query[i].sqft %></td>
 		<td><%=  estimatePartFootages.query[i].length %></td>
 		<td><%=  estimatePartFootages.query[i].width %></td>
+		<td><%=  estimatePartFootages.query[i].length*estimatePartFootages.query[i].width %></td>
 		<td><%=  estimatePartFootages.query[i].displayorder %></td>
 		<td>
 			<a href="estimatePartFootage/delete/<%=  estimatePartFootages.query[i]._id %>"> <button type="button" class="btn btn-danger">Delete</button> </a> 
