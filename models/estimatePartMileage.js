@@ -7,6 +7,7 @@ var EstimatePartMileageSchema = new Schema({
     entries: [{
         entry: { type: Schema.Types.ObjectId, ref: EntryMileage },
     }],
+	_id : { type: Number, required: true},
     subtotal:  { type: Number, required: true, default: 0 }
 })
 
