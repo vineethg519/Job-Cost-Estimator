@@ -1,8 +1,12 @@
 var express = require('express');
 var api = express.Router();
+var find = require('lodash.find');
+var remove = require('lodash.remove');
+var findIndex = require('lodash.findindex');
+var Model = require('../models/estimatePartAggregate.js');
+const notfoundstring = 'No such estimatePartAggregate';
 
 // see app.js for the root request this controller handles
-
 
 // GET to this controller root URI
 api.get('/', function(req, res) {
@@ -26,11 +30,6 @@ api.get('/findall', function(req, res){
 
 module.exports = api;  // at the very end
 
-
-// GET to this controller root URI
-api.get("/", function (request, response) {
-  response.render("aggregate_cost/index.ejs");
-});
 
 // GET create
 api.get("/create", function(req, res) {
@@ -141,10 +140,6 @@ api.post('/delete/:id', function(req, res, next) {
     return res.redirect('/estimatePartAggregate');
 });
 // see app.js for the root request this controller handles  
-
-
-
-module.exports = api;
 
 // GET to this controller root URI
 api.get("/", function (request, response) {
