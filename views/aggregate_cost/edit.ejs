@@ -10,37 +10,29 @@
                         <input type="number" class="form-control" id="_id" name="_id" value="<%= estimatePartAggregate._id %>" required readonly>
                     </div>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                <div class="form-group">
-                <label for="usesAggregate">Uses Aggregate?</label>
-                <input type="checkbox" class="form-control" id="usesAggregate" name="usesAggregate" value="<%= estimatePartAggregate.isUsed %>">
-                </div>
-=======
->>>>>>> 791a35409c00a279f69ca2c1c08979b770114a55
 
                     <div class="form-group">
                     <label for="usesAggregate">Uses Aggregate?</label>
-                    <input type="checkbox" class="form-control" id="usesAggregate" name="usesAggregate" />
+                    <input type="checkbox" class="form-control" id="usesAggregate" name="usesAggregate" <% if(estimatePartAggregate.isUsed == 'true') { %> checked <% } %>/>
                     </div>
 
                     <div class="form-group">
                     <label for="aggregateTypeSelection">Aggregate Type</label>
                     <div class="funkyradio">
                             <div class="funkyradio-primary">
-                                <input type="radio" name="radio" id="Sand" value="Sand" />
+                                <input type="radio" name="radio" id="Sand" value="Sand" <% if(estimatePartAggregate.aggregateTypeSelection == 'Sand') {%> checked <% } %>/>
                                 <label for="Sand">Sand</label>
                             </div>
                             <div class="funkyradio-success">
-                                <input type="radio" name="radio" id="Quartz" value="Quartz" />
+                                <input type="radio" name="radio" id="Quartz" value="Quartz" <% if(estimatePartAggregate.aggregateTypeSelection == 'Quartz') {%> checked <% } %>/>
                                 <label for="Quartz">Quartz</label>
                             </div>
                             <div class="funkyradio-warning">
-                                <input type="radio" name="radio" id="Flake" value="Flake" />
+                                <input type="radio" name="radio" id="Flake" value="Flake" <% if(estimatePartAggregate.aggregateTypeSelection == 'Flake') {%> checked <% } %>/>
                                 <label for="Flake">Flake</label>
                             </div>
                             <div class="funkyradio-danger">
-                                <input type="radio" name="radio" id="Glass" value="Glass" />
+                                <input type="radio" name="radio" id="Glass" value="Glass" <% if(estimatePartAggregate.aggregateTypeSelection == 'Glass') {%> checked <% } %>/>
                                 <label for="Glass">Glass Beads</label>
                             </div>
                         </div>
@@ -48,38 +40,21 @@
 
                     <div class="form-group">
                         <label for="aggregateMaterialSelection">Aggregate Material Selection</label>
-                        <input type="number" class="form-control" id="aggregateMaterialSelection" name="aggregateMaterialSelection"  >
+                        <input type="number" class="form-control" id="aggregateMaterialSelection" name="aggregateMaterialSelection" value="<%= estimatePartAggregate.aggregateMaterialSelection %>" >
 
                     </div>
                     
                     <div class="form-group">
                         <label for="coverageSqFt">Coverage Square per feet</label>
-                        <input type="number" class="form-control" id="coverageSqFt" name="coverageSqFt"  >
+                        <input type="number" class="form-control" id="coverageSqFt" name="coverageSqFt" value="<%= estimatePartAggregate.coverageSqFt %>" >
+                    </div>
 
+                    <div class="form-group">
+                        <label for="subtotal">Subtotal</label>
+                        <input type="number" class="form-control" id="subtotal" name="subtotal" value="<%= estimatePartAggregate.subtotal%>" >
                     </div>
 
                     <input type="submit" value="Post entry" class="btn btn-primary">
             </div>
 		</form>
-<<<<<<< HEAD
-	</div>
-</div>
-=======
-	<!-- <tr><th>Dollars Per Mile</th> <td><input type="text" value="<%= estimatePartAggregates.query[0].sqft %>"> </input></td></tr> -->
-	<tr><td colspan="2"> 
-		<div class="row">
-			<div class="col-md-2"> 
-				<!-- <a href="/estimatePartAggregate" class="btn btn-info" > Return to list</a> -->
-			</div>
-			<div class="col-md-5"> 
-					<button type="submit"  class="btn btn-success pull-right" > Save this item</button>
-			</div>
-		</div>
-		</td>
-	</tr>
-</table>
-</form>
->>>>>>> 69c194631461adf6491ab859f518ce761e7c1275
-=======
 
->>>>>>> 791a35409c00a279f69ca2c1c08979b770114a55
