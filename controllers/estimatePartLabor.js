@@ -35,7 +35,7 @@ api.get('/', function(req, res) {
     console.log("Handling GET " + req);
     return res.render('labor_cost/index.ejs',
         { title: "Labor", layout: "layout.ejs" });
-<<<<<<< HEAD
+
 });
 
 // GET create
@@ -175,8 +175,6 @@ api.get("/", function (request, response) {
 /**This controller is managed by Team 3-10 
 Vineetha Boppishetty
 Renu Kappara */
-=======
-});
 
 // GET create
 api.get("/create", function(req, res) {
@@ -313,4 +311,4 @@ api.get("/", function (request, response) {
  response.render("labor_cost/index.ejs");
 });
 
->>>>>>> 791a35409c00a279f69ca2c1c08979b770114a55
+

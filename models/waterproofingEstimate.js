@@ -29,6 +29,6 @@ WaterproofingEstimateSchema.virtual('created').get(function () {
 var waterProofingEstimate = mongoose.model('WaterProofingEstimate', WaterproofingEstimateSchema)
 module.exports = waterProofingEstimate
 
-// This model is managed by Team 3-3
-// Phani Lakshman Yarlagadda
-// Venkata Prasant Poodipeddi
+//This model is managed by Team 5-3
+//Cher-Xa Thao
+//Brandyn Kopp

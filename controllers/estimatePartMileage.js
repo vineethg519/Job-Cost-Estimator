@@ -159,16 +159,6 @@ function getLatestMileageRate(rates){
     return curMilRate;
 }
 
-
-
-
-
-
-
 module.exports = api;
 
-/**This controller is managed by Team 5-11
-Monish Verma
-Abhilash Pochampally
-*/
 

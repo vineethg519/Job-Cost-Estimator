@@ -5,6 +5,7 @@ var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
 var express = require('express');
 var api = express.Router();
+var Model = require('../models/estimatePartAbout.js');  
 const notfoundstring = 'estimatePartAbouts';
 
 // see app.js for the root request this controller handles
@@ -12,9 +13,6 @@ const notfoundstring = 'estimatePartAbouts';
 // GET to this controller root URI
 api.get("/", function (request, response) {
   response.render("about/index.ejs");
-});
-api.get('/create', function (request, response) {
-   response.render("about/create.ejs");
 });
 
 api.get('/findall', function(req, res){
@@ -98,13 +96,14 @@ api.post('/save', function(req, res) {
     var item = new Model;
     console.log("NEW ID " + req.body._id);
     item._id = parseInt(req.body._id);
-    item.name = req.body.name;
-    item.unit = req.body.unit;
-    item.price = req.body.price;
-    item.displayorder = parseInt(req.body.displayorder);
+    item.client = req.body.client;
+    item.address = req.body.address;
+    item.city = req.body.city;
+    item.state = req.body.state;
+    item.zipcode = req.body.zipcode;
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
-    return res.redirect('/about');
+    return res.redirect('/estimatePartAbout');
 });
 
 // POST update
@@ -117,12 +116,13 @@ api.post('/save/:id', function(req, res) {
     if (!item) { return res.end(notfoundstring); }
     console.log("ORIGINAL VALUES " + JSON.stringify(item));
     console.log("UPDATED VALUES: " + JSON.stringify(req.body));
-    item.name = req.body.name;
-    item.unit = req.body.unit;
-    item.price = req.body.price;
-    item.displayorder = req.body.displayorder;
+    item.client = req.body.client;
+    item.address = req.body.address;
+    item.city = req.body.city;
+    item.state = req.body.state;
+    item.zipcode = req.body.zipcode;
     console.log("SAVING UPDATED ITEM " + JSON.stringify(item));
-    return res.redirect('/about');
+    return res.redirect('/estimatePartAbout');
 });
 
 // DELETE id (uses HTML5 form method POST)
@@ -134,7 +134,7 @@ api.post('/delete/:id', function(req, res, next) {
     var item = remove(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("Deleted item " + JSON.stringify(item));
-    return res.redirect('/about');
+    return res.redirect('/estimatePartAbout');
 });
 
 

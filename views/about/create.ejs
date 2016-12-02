@@ -1,9 +1,9 @@
 <br/>
 
 <br/>
-<h2>Create a new estimatePartAbout product</h2>
+<h2>Create a new estimatePartAbout </h2>
 <p>There are currently
-	<%= estimatePartAbouts.query.length %> estimatePartAbout. </p>
+	<%= estimatePartAbouts.query.length %>  </p>
 <br/>
 <% 
 maxID=0; 
@@ -12,20 +12,12 @@ for (var i=0; i<estimatePartAbouts.query.length; i++) {
         maxID=estimatePartAbouts.query[i]._id;
         }
 }
-maxDisplayorder=0; 
-for (var i=0; i<estimatePartAbouts.query.length; i++) {
-    if(estimatePartAbouts.query[i].displayorder > maxDisplayorder) {
-        maxDisplayorder=estimatePartAbouts.query[i].displayorder;
-        }
-}
+
 %>
-	<p>The largest ID is
-		<%= maxID %>. </p>
-	<p>The largest display order is
-		<%= maxDisplayorder %>. </p><br/>
+	
 	<div class="content">
 		<div>
-			<form name="estimatePartAbout" method="POST" action="/waterproofingPrimer/save" + _id.value>
+			<form name="estimatePartAbout" method="POST" action="/estimatePartAbout/save">
 
 				<div class="form-group" id=frm>
 					<label for="_id">ID</label>
@@ -33,23 +25,30 @@ for (var i=0; i<estimatePartAbouts.query.length; i++) {
 				</div>
 
 				<div class="form-group">
-					<label for="name">Name</label>
-					<input type="text" class="form-control" id="name" name="name" value="Name" required>
+					<label for="client">client</label>
+					<input type="text" class="form-control" id="name" name="client" value="Name" required>
 				</div>
 
 				<div class="form-group">
-					<label for="unit">Unit</label>
-					<input type="text" class="form-control" id="unit" name="unit" value="gal" required>
+					<label for="address">Address</label>
+					<input type="text" class="form-control" id="address" name="address" value="" required>
 				</div>
 
 				<div class="form-group">
-					<label for="price">Price</label>
-					<input type="text" class="form-control" id="price" name="price" value="30" required>
+					<label for="city">City</label>
+					<input type="text" class="form-control" id="city" name="city" value="" required>
 				</div>
 
-				<div class="form-group">
-					<label for="displayorder">Display Order</label>
-					<input type="number" class="form-control" id="displayorder" name="displayorder" value="<%= maxDisplayorder+10 %>" required>					required>
+				
+
+                <div class="form-group">
+					<label for="state">State</label>
+					<input type="text" class="form-control" id="state" name="state"  required>	
+				</div>
+
+                <div class="form-group">
+					<label for="zipcode">ZipCode</label>
+					<input type="number" class="form-control" id="zipcode" name="zipcode"  required>
 				</div>
 
 				<div class="form-group">
@@ -62,3 +61,8 @@ for (var i=0; i<estimatePartAbouts.query.length; i++) {
 			</form>
 		</div>
 	</div>
+
+<!--  This model is managed by Team 5-08
+Kona Arun Kumar
+Naga RAhul Tejas Konkepudi
+-->

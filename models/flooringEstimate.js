@@ -9,6 +9,7 @@ var mongoose = require('mongoose')
   , Miscellaneous = require('./estimatePartAbout.js')
 
 var FlooringEstimateSchema = new Schema({
+  _id: { type: Number, required: true },
   about: { type: Schema.Types.ObjectId, ref: About },
   footage: { type: Schema.Types.ObjectId, ref: Footage },
   flooring: { type: Schema.Types.ObjectId, ref: Flooring },
@@ -28,3 +29,7 @@ FlooringEstimateSchema.virtual('created').get(function () {
 
 var flooringEstimate = mongoose.model('FlooringEstimate', FlooringEstimateSchema)
 module.exports = flooringEstimate
+
+// This model is managed by team 5-R01
+//Dambadeni Kalu Achchillage, Nilantha
+//Muralidhar Gouda Buddanagoudagari

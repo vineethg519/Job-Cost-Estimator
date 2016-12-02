@@ -1,33 +1,14 @@
-<br/>
-<br/>
-<h2>Edit estimatePartAbout product</h2>
-<div class="content">
-	<div>
-		<form method="POST" action="/estimatePartAbout/save/<%= estimatePartAbout._id %>">
-
-			<div class="form-group" id=frm>
-				<label for="_id">ID</label>
-				<input type="number" class="form-control" id="_id" name="_id" value="<%= estimatePartAbout._id %>" required disabled>
 			</div>
 
 			<div class="form-group">
-				<label for="name">Name</label>
-				<input type="text" class="form-control" id="name" name="name" value="<%= estimatePartAbout.name %>" required>
+				<label for="state">State</label>
+				<input type="text" class="form-control" id="state" name="state" value="<%= estimatePartAbout.state %>"
+					required>
 			</div>
 
-			<div class="form-group">
-				<label for="unit">Unit</label>
-				<input type="text" class="form-control" id="unit" name="unit" value="<%= estimatePartAbout.unit %>" required>
-			</div>
-
-			<div class="form-group">
-				<label for="price">Price</label>
-				<input type="number" class="form-control" id="price" name="price" value="<%= estimatePartAbout.price %>" required>
-			</div>
-
-			<div class="form-group">
-				<label for="displayorder">Display Order</label>
-				<input type="number" class="form-control" id="displayorder" name="displayorder" value="<%= estimatePartAbout.displayorder %>"
+            <div class="form-group">
+				<label for="zipcode">ZipCode</label>
+				<input type="number" class="form-control" id="zipcode" name="zipcode" value="<%= estimatePartAbout.zipcode %>"
 					required>
 			</div>
 
@@ -39,3 +20,8 @@
 		</form>
 	</div>
 </div>
+
+<!--  This model is managed by Team 5-08
+Arun Kumar Kona
+Naga Rahul Tejas Konkepudi
+-->
