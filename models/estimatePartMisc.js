@@ -6,6 +6,7 @@ var EstimatePartMiscSchema = new Schema({
     entries: [{
         entry: { type: Schema.Types.ObjectId, ref: EntryMisc },
     }],
+	_id : { type: Number, required: true},
     subtotal: { type: Number, required: true, default: 0 }
 })
 

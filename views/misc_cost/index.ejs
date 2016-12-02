@@ -4,7 +4,7 @@
  <h2>All entries</h2>
 
 <p>There are  <%= estimatePartMiscs.query[0].entries.length %> entries. <br/>
-<a class="btn btn-info" href="estimatePartMisc/create"> New Entry</a></p>
+<a class="btn btn-info" href="estimatePartMisc/create"><i class="glyphicon glyphicon-pencil"></i> New Entry</a></p>
 
 <table class="table" border="1">
     <thead>
@@ -27,9 +27,9 @@
             <td> $<%= entry.cost %></td>
             <% totalCost += parseInt(entry.cost) %>
             <td>
-              <a href="estimatePartMisc/details/<%= entry._id %>" >Details</a> 
-              <a href="estimatePartMisc/edit/<%= entry._id %>" >Edit </a> 
-              <a href="estimatePartMisc/delete/<%= entry._id %>" >Delete </a> </td>
+              <a href="estimatePartMisc/details/<%= entry._id %>" class="btn btn-info"> <i class="glyphicon glyphicon-list-alt"></i> Details</a> 
+              <a href="estimatePartMisc/edit/<%= entry._id %>" class="btn btn-warning"> <i class="glyphicon glyphicon-edit"></i>  Edit </a> 
+              <a href="estimatePartMisc/delete/<%= entry._id %>" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i> Delete </a> </td>
             </td>
         </tr>
     <%  } %>

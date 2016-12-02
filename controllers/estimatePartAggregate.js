@@ -104,6 +104,7 @@ api.post('/save', function(req, res) {
     item.aggregateTypeSelection = req.body.radio;
     item.aggregateMaterialSelection = req.body.unit;
     item.coverageSqFt = req.body.coverageSqFt;
+    item.subtotal = req.body.subtotal;
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
     return res.redirect('/estimatePartAggregate');
@@ -123,6 +124,7 @@ api.post('/save/:id', function(req, res) {
     item.aggregateTypeSelection = req.body.radio;
     item.aggregateMaterialSelection = req.body.aggregateMaterialSelection;
     item.coverageSqFt = req.body.coverageSqFt;
+    item.subtotal = req.body.subtotal;
     console.log("SAVING UPDATED ITEM " + JSON.stringify(item));
     return res.redirect('/estimatePartAggregate');
 });
