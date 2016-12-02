@@ -4,8 +4,7 @@
 //pothireddy subbareddy
 var express = require('express');
 var api = express.Router();
-<<<<<<< HEAD
-=======
+
 var find = require('lodash.find');
 var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
@@ -13,7 +12,7 @@ var Model = require('../models/estimatePartRoofing.js');
 const notfoundstring = 'No such estimatePartRoofing';
 var express = require('express');
 var api = express.Router();
->>>>>>> 791a35409c00a279f69ca2c1c08979b770114a55
+
 
 
 // see app.js for the root request this controller handles
@@ -23,11 +22,6 @@ api.get("/", function (request, response) {
   response.render("roofing_cost/index.ejs");
 });
 
-<<<<<<< HEAD
-
-
-
-=======
 api.get('/findall', function(req, res){
     res.setHeader('Content-Type', 'application/json');
     var data = req.app.locals.estimatePartAbouts.query;
@@ -145,7 +139,4 @@ api.post('/delete/:id', function(req, res, next) {
     console.log("Deleted item " + JSON.stringify(item));
     return res.redirect('/estimatePartRoofing');
 });
-
-
->>>>>>> 791a35409c00a279f69ca2c1c08979b770114a55
 module.exports = api;
