@@ -30,16 +30,14 @@ api.get("/create", function(req, res) {
         { title: "Miscellaneous Item", layout: "layout.ejs", newID: genrateUID(req.app.locals.estimatePartMiscs.query[0].entries) });
 });
 
-<<<<<<< HEAD
-
-
 
 module.exports = api;
 
 // GET to this controller root URI
 api.get("/", function (request, response) {
   response.render("mileage_cost/index.ejs");
-=======
+});
+
 function genrateUID(items){
     var ids = [];
     var UID = items.length+1; //Unique ID
@@ -81,7 +79,7 @@ api.get('/details/:id', function(req, res) {
             layout: "layout.ejs",
             estimatePartMisc: item
         });
->>>>>>> 4d854f7b679ec52f1e5f3e0bab914072771e8dbc
+
 });
 
 // GET one

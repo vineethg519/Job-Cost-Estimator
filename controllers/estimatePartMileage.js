@@ -14,6 +14,7 @@ api.get('/findall', function(req, res){
 // GET to this controller root URI
 api.get("/", function (request, response) {
   response.render("mileage_cost/index.ejs");
+});
 
 api.get('/delete/:id', function(req, res){
     // res.setHeader('Content-Type', 'application/html');
