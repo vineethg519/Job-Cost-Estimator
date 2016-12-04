@@ -18,20 +18,11 @@ api.get('/findall', function(req, res){
     res.send(JSON.stringify(data));
 });
 
-<<<<<<< HEAD
-
-// see app.js for the root request this controller handles
-
-// GET to this controller root URI
-api.get("/", function (request, response) {
-  response.render("mileage_cost/index.ejs");
-=======
 // HANDLE JSON REQUESTS --------------------------------------------
 api.get('/findall', function(req, res){
     res.setHeader('Content-Type', 'application/json');
     var data = req.app.locals.estimatePartMileages.query[0].entries;
     res.send(JSON.stringify(data));
->>>>>>> c289dcf6d89d39b118eb1616c47e0687c8c2d4d5
 });
 
 api.get('/delete/:id', function(req, res){
