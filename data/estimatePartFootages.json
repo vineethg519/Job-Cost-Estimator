@@ -1,18 +1,26 @@
 [
-  {
-    "entries": [{
-        "entry": {
-          "description": "main",
-          "length": 100,
-          "width":10
-    }},
-    {
-        "entry": {
-          "description": "entry",
-         "length": 100,
-          "width":20
-    }}
-    ],
-    "sqft": 3000
-  }
+	{
+		"_type": "estimatePartFootages",
+        "_id": 1,
+		"sqft": 4000,
+		"length": 200,
+        "width":20,
+		"displayorder": 10
+    },
+	{
+		"_type": "estimatePartFootages",
+        "_id": 2,
+		"sqft": 9000,
+		"length": 300,
+        "width":30,
+		"displayorder": 20
+    },
+	{
+		"_type": "estimatePartFootages",
+        "_id": 3,
+		"sqft": 2500,
+		"length": 50,
+        "width": 50,
+		"displayorder": 30
+    }
 ]

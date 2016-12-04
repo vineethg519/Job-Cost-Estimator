@@ -1,31 +1,49 @@
-
 <% console.log(aggregateMaterials.query); %>
-<div class="container">
- <h2>Aggregate material costs</h2>
-
-<p>There are  <%= aggregateMaterials.query.length %> aggregates. <br/>
-<a href="create.ejs">Add a new one.</a></p>
-
-<table class="table" border="1">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Display Order</th>
-        <th>Price</th>
-        <th>Unit</th>
-       <th>Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-<% for (var i = 0; i < aggregateMaterials.query.length; i++) { %>
-         <tr>
-            <td><%=  aggregateMaterials.query[i].name %></td>
-            <td><%=  aggregateMaterials.query[i].displayorder %></td>
-            <td><%=  aggregateMaterials.query[i].price %></td>
-            <td><%=  aggregateMaterials.query[i].unit %></td>
-            <td>Delete  Details  Edit</td>
-         </tr>
-         <% } %>
-</tbody>
-</table>
-</div>
+	<div class="container">
+		<h2>Aggregate Materials costs</h2>
+		<p>There are
+			<%= aggregateMaterials.query.length %> Aggregate Materials. <br/>
+				<a href="aggregate/create" class="btn btn-info" role="button">Add a new one.</a></p>
+		<table class="table" border="1">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Display Order</th>
+					<th>Price</th>
+					<th>Unit</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% for (var i = 0; i < aggregateMaterials.query.length; i++) { %>
+					<tr>
+						<td>
+							<%=  aggregateMaterials.query[i]._id %>
+						</td>
+						<td>
+							<%=  aggregateMaterials.query[i].name %>
+						</td>
+						<td>
+							<%=  aggregateMaterials.query[i].displayorder %>
+						</td>
+						<td>
+							<%=  aggregateMaterials.query[i].price %>
+						</td>
+						<td>
+							<%=  aggregateMaterials.query[i].unit %>
+						</td>
+						<td>
+							<a href="aggregate/delete/<%=  aggregateMaterials.query[i]._id %>" class="btn btn-danger" role="button"> Delete </a> |
+							<a href="aggregate/details/<%= aggregateMaterials.query[i]._id %>" class="btn btn-info" role="button"> Details </a> |
+							<a href="aggregate/edit/<%=    aggregateMaterials.query[i]._id %>" class="btn btn-warning" role="button"> Edit </a>
+						</td>
+					</tr>
+					<% } %>
+			</tbody>
+		</table>
+	</div>
+	
+	<!-- This view is managed by team 3-12 -->
+<!--  Anoop kumar Yalala -->
+<!-- Anudeep Reddy Mallidi  -->

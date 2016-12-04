@@ -1,7 +1,29 @@
-[
+  [
   {
+    "_id": 1,
     "floorSystemType": "Epoxy",
     "usesUrethane": false,
-    "subtotal": 22
+    "urethaneCoverageSqFt": 0,
+    "usesEpoxy": true,
+    "expoxyCoverageSqFt": 15,
+    "subtotal": 32
+  },
+  {
+    "_id": 2,
+    "floorSystemType": "Urethane",
+    "usesUrethane": true,
+    "urethaneCoverageSqFt": 10,
+    "usesEpoxy": false,
+    "expoxyCoverageSqFt": 0,
+    "subtotal": 38
+  },
+  {
+    "_id": 3,
+    "floorSystemType": "Epoxy",
+    "usesUrethane": false,
+    "urethaneCoverageSqFt": 0,
+    "usesEpoxy": true,
+    "expoxyCoverageSqFt": 20,
+    "subtotal": 42
   }
 ]

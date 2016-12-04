@@ -1,6 +1,3 @@
-
-
-
 var express = require('express');
 var api = express.Router();
 var Movie = require('../models/flooringEstimate');
@@ -18,13 +15,3 @@ api.get("/create", function (request, response) {
 });
 
 module.exports = api;
-api.get('/findall', function(req, res){
-    res.setHeader('Content-Type', 'application/json');
-    var data = req.app.locals.flooringEstimates.query;
-    res.send(JSON.stringify(data));
-});
-
-
-// This model is managed by Team 3-01
-// Avinash varma Mandapati
-// Vipul Reddy Maddadi

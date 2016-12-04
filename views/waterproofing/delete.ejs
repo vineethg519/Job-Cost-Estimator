@@ -1,0 +1,27 @@
+<h2>Recent waterproofing estimates</h2>
+<% c=0; %>
+<% c++; %>
+<div class="content">
+
+<%= waterproofingEstimates.published %></div>
+<%= waterproofingEstimates.title %></div>
+<% include ..\..\views\estimateparts\est-about %>
+Square footage : <% include ..\..\views\estimateparts\est-footage %> sqft<br/>
+Flooring : <% include ..\..\views\estimateparts\est-flooring %><br/>
+Aggregate : <% include ..\..\views\estimateparts\est-aggregate %> <br/>
+Labour Cost : <% include ..\..\views\estimateparts\est-labor %> <br/>
+Mileage : <% include ..\..\views\estimateparts\est-mileage %> <br/>
+Misc : <% include ..\..\views\estimateparts\est-misc %><br/>
+<% include ..\..\views\estimateparts\est-result %>
+<br/>
+<form method="get" action="/waterproofingEstimate">
+	<input type="submit" value="Return to list" class="btn btn-caution" />
+</form>
+<br/>
+<form method="POST" action="/waterproofingEstimate/delete/<%= waterproofingEstimate._id %>">
+	<input type="submit" value="Delete this item" class="btn btn-danger pull-right" />
+</form>
+</div>
+<!--This model is managed by Team 3-03-->
+<!--Phani Lakshman Yarlagadda-->
+<!--Venkata Prasant Poodipeddi-->

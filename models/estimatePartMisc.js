@@ -6,6 +6,7 @@ var EstimatePartMiscSchema = new Schema({
     entries: [{
         entry: { type: Schema.Types.ObjectId, ref: EntryMisc },
     }],
+	_id : { type: Number, required: true},
     subtotal: { type: Number, required: true, default: 0 }
 })
 
@@ -13,5 +14,6 @@ var estimatePartMisc = mongoose.model('EstimatePartMisc', EstimatePartMiscSchema
 module.exports = estimatePartMisc
 
 // This model is managed by Team 5-11
-// Monish Verma
-// Abhilash Pochampally
+// Ravva, Shanmukha Manikantha Surya Vamsi
+// Avasarala, Venkata Bhardwaj
+// Vallapurapu, Shankar

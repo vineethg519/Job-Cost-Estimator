@@ -7,12 +7,15 @@ var EstimatePartMileageSchema = new Schema({
     entries: [{
         entry: { type: Schema.Types.ObjectId, ref: EntryMileage },
     }],
+	_id : { type: Number, required: true},
     subtotal:  { type: Number, required: true, default: 0 }
 })
 
 var estimatePartMileage = mongoose.model('EstimatePartMileage', EstimatePartMileageSchema)
 module.exports = estimatePartMileage
 
+
 // This model is managed by Team 5-11
-// Monish Verma
-// Abhilash Pochampally
+// Ravva, Shanmukha Manikantha Surya Vamsi
+// Avasarala, Venkata Bhardwaj
+// Vallapurapu, Shankar
