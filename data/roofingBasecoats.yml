@@ -1,16 +1,18 @@
 ---
 - name: 7419 HB - perma-gard HB
+  _id: 1
   defaultCoverageSqFt: 100
   unit: gal
   displayorder: 10
   price: 40.70
 - name: 70620 - permathane II
+  _id: 2
   defaultCoverageSqFt: 100
   unit: gal
   displayorder: 20
   price: 38.50
-  7419 HB - perma-gard HB $40.70/gal:
-  70620 - permathane II $38.50/gal:
-#Jaswanth Jonnalagadda,
-#Haritha Arikapudi
-#Susmitha patlolla
+# 7419 HB - perma-gard HB              $40.70/gal
+# 70620 - permathane II             $38.50/gal
+# This data is managed by Team 3-13
+# Vineeth Gajula
+# Sainath Reddy Emani
