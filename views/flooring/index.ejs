@@ -1,6 +1,6 @@
 <h2>Recent flooring estimates</h2>
 <p>There are  <%= flooringEstimates.query.length %> flooring estimates. <br/>
-<a href="/flooringEstimate/create">Add a new one.</a></p>
+<a href="flooringEstimate/create"><button type="button" class="btn btn-primary">Add a new one</button></a></p>
 <% for(var item in flooringEstimates.query) { %>
 <div class="panel panel-default">
 <div class="panel-heading">
@@ -20,8 +20,6 @@
 </div>
 </div>
 <% } %>
-
-
 
 <!-- This model is managed by Team 3-01
  Avinash varma Mandapati

@@ -2,7 +2,7 @@ var mongoose = require('mongoose')
     , Schema = mongoose.Schema
 
 var AggregateMaterialSchema = new Schema({
-	_id:{type:Number, required:true},
+    _id: { type: Number, required: true },
     name: { type: String, required: true },
     aggregateType: { type: String, required: true, default: 'Sand', enum: ['Sand', 'Quartz', 'Flake', 'Glass Beads'] },
     defaultCoverageSqFt: { type: Number, required: true, default: 200 },
@@ -14,3 +14,6 @@ var AggregateMaterialSchema = new Schema({
 var aggregateMaterial = mongoose.model('AggregateMaterial', AggregateMaterialSchema)
 module.exports = aggregateMaterial
 
+// This model is managed by Team 3-12
+// Anoop kumar Yalala
+// Anudeep Reddy Mallidi

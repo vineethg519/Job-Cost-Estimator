@@ -1,24 +1,62 @@
 [
   {
+    
     "entries": [{
-        "entry": {
-          "type": "apprentice",
+        
+          "_id":1,
+          "type": "Driver",
           "count": 3,
-          "hoursPerPerson":24,
-          "dollarsPerHour":15,
-          "nightsPerPerson":2,
-          "costPerNight":80
-    }},
-    {
-        "entry": {
-          "type": "assistant",
-          "count": 2,
-          "hoursPerPerson":24,
+          "hoursPerPerson":20,
           "dollarsPerHour":10,
-          "nightsPerPerson":2,
+          "nightsPerPerson":3,
+          "costPerNight":30
+    },
+    {  
+        
+          "_id":2,
+          "type": "accountant",
+          "count": 2,
+          "hoursPerPerson":20,
+          "dollarsPerHour":10,
+          "nightsPerPerson":3,
           "costPerNight":80
-    }}
+    },
+
+    {  
+        
+          "_id":3,
+          "type": "assistant",
+          "count": 4,
+          "hoursPerPerson":30,
+          "dollarsPerHour":20,
+          "nightsPerPerson":4,
+          "costPerNight":50
+    },
+
+    {  
+        
+          "_id":4,
+          "type": "Manager",
+          "count": 5,
+          "hoursPerPerson":15,
+          "dollarsPerHour":15,
+          "nightsPerPerson":4,
+          "costPerNight":85
+    },
+
+    {  
+        
+          "_id":5,
+          "type": "secretary",
+          "count": 6,
+          "hoursPerPerson":30,
+          "dollarsPerHour":8,
+          "nightsPerPerson":5,
+          "costPerNight":40
+    }
+    
     ],
     "subtotal": 1880
   }
+
 ]

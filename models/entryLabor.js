@@ -12,7 +12,6 @@ var EntryLaborSchema = new Schema({
 
 var entryLabor = mongoose.model('EntryLabor', EntryLaborSchema)
 module.exports = entryLabor
-
-// This model is managed by Team 3-10
-// Boppishetty, Vineetha
-// Kappara, Renu
+// This model is managed by Team 5-10
+// Hima Bindu Jammula
+// Shravani Alampalli

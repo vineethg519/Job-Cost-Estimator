@@ -2,7 +2,6 @@ var mongoose = require('mongoose')
   , Schema = mongoose.Schema
 
 var WaterproofingTopcoatSchema = new Schema({
-    _id:  { type: String, required: true },
     name:  { type: String, required: true },
     unit:  { type: String, required: true },
     displayorder:  { type: String, required: true },
@@ -12,6 +11,7 @@ var WaterproofingTopcoatSchema = new Schema({
 var waterproofingTopcoat = mongoose.model('WaterproofingTopcoat', WaterproofingTopcoatSchema)
 module.exports = waterproofingTopcoat
 
-// This model is managed by Team 3-14
-// Navyatha Vegesna
-// Durga Bhavani
+//This data is managed by Team 5-14
+//Sruthi Palpandian
+//Snigda Reddy
+//Ganga Samyuktha Reddy
