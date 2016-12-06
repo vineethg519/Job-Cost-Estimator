@@ -4,10 +4,7 @@
 
 <p>There are  <%= estimatePartLabors.query[0].entries.length %> entries. <br/>
 
-
-				<a href="estimatePartLabor/create"><button type="button" class="btn btn-info"><i class="glyphicon glyphicon-pencil"></i> Add a new one.</button></a></p>
-
-
+				<a class="btn btn-primary" href="estimatePartLabor/create"><i class="glyphicon glyphicon-pencil"></i>Add New Entry</a></p>
 <table class="table" border="1">
     <thead>
       <tr>
@@ -18,14 +15,16 @@
        <th>dollarsPerHour</th>
        <th>nightsPerPerson</th>
        <th>costPerNight</th>
-
+       <th> cost </th>
        <th>Actions</th>
     </tr>
     </thead>
     <tbody>
 <% for (var i = 0; i < estimatePartLabors.query.length; i++) { 
+    var tot=0;
      for(var j=0; j<estimatePartLabors.query[i].entries.length;j++){
         var entry = estimatePartLabors.query[i].entries[j];
+        var doll= entry.count*entry.hoursPerPerson*entry.dollarsPerHour + entry.nightsPerPerson*entry.costPerNight;
            
       %>
         <tr>
@@ -36,18 +35,23 @@
             <td> <%= entry.dollarsPerHour %></td>
             <td> <%= entry.nightsPerPerson %></td>
             <td> <%= entry.costPerNight %></td></td>
-             
+            <td bgcolor = "#FFFFFF"> <%= doll %></td>
+            <%tot+= doll %>
+
              
             <td>
-            <a href="estimatePartLabor/delete/<%=  entry._id %>"> <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i> Delete </button> </a> 
-							<a href="estimatePartLabor/details/<%= entry._id %>"> <button type="button" class="btn btn-info"><i class="glyphicon glyphicon-list-alt"></i> Details </button> </a> 
-							<a href="estimatePartLabor/edit/<%=    entry._id %>"> <button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-edit"></i> Edit </button> </a>
+            <a href="estimatePartLabor/delete/<%=  entry._id %>" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i> Delete </a> 
+							<a href="estimatePartLabor/details/<%= entry._id %>" class="btn btn-info"><i class="glyphicon glyphicon-list-alt"></i> Details </a> 
+							<a href="estimatePartLabor/edit/<%=   entry._id %>" class="btn btn-warning"><i class="glyphicon glyphicon-edit"></i> Edit </a>
             </td>
          </tr>
          <% } %>
          <% } %>
-        
-         
+<tr> 
+            <td colspan="4" bgcolor = "#FFFFFF"> <strong> Total Labor Cost:  <%=  tot+"$" %> </strong></span> </td>
+            
+         </tr>
+
 </tbody>
 </table>
 </div>
