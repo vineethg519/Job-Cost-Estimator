@@ -1,13 +1,10 @@
-// This view is managed by Team 5-08
-// Konkepudi Naga Rahul Tejas
-// Kona Arun Kumar
-
 <% console.log(estimatePartAbouts.query); %>
 <div class="container">
  <h2>All entries</h2>
 
 <p>There are  <%= estimatePartAbouts.query.length %> entries. <br/>
-<a href="create.ejs">Add a new one.</a></p>
+<a class="btn btn-primary " href="/estimatePartAbout/create"><i class="glyphicon glyphicon-pencil"></i>Add a new one.</a></p>
+
 
 <table class="table" border="1">
     <thead>
@@ -30,12 +27,10 @@
             <td><%=  estimatePartAbouts.query[i].address %></td>
             <td><%=  estimatePartAbouts.query[i].state %></td>
             <td><%=  estimatePartAbouts.query[i].zipcode %></td>
-            
-            
-            
-            <td><a href="estimatePartAbout/delete/<%= i+1 %>"> Delete</a> 
-            <a href="estimatePartAbout/details/<%= i+1 %>"> Details</a>
-            <a href="estimatePartAbout/edit/<%= i+1 %>"> Edit</a>
+            <td>
+            <a href="/estimatePartAbout/delete/<%=estimatePartAbouts.query[0]._id %>"class="btn btn-info"> <i class="glyphicon glyphicon-list-alt"></i> Delete </a> 
+            <a href="/estimatePartAbout/edit/<%= estimatePartAbouts.query[0]._id %>"class="btn btn-warning"> <i class="glyphicon glyphicon-edit"></i> edit </a> 
+            <a href="/estimatePartAbout/details/<%=  estimatePartAbouts.query[0]._id %>"class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i> Details</a>
           </td>
          </tr>
          <% } %>
