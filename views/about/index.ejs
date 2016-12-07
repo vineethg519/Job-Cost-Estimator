@@ -3,8 +3,7 @@
  <h2>All entries</h2>
 
 <p>There are  <%= estimatePartAbouts.query.length %> entries. <br/>
-<a class="btn btn-primary " href="/estimatePartAbout/create"><i class="glyphicon glyphicon-pencil"></i>Add a new one.</a></p>
-
+<a href="estimatePartAbout/create"class="btn btn-primary ">Add a new one.</a></p>
 
 <table class="table" border="1">
     <thead>
@@ -15,6 +14,7 @@
         <th>Address</th>
         <th>State</th>
         <th>ZipCode</th>
+        
        <th>Actions</th>
     </tr>
     </thead>
@@ -27,10 +27,14 @@
             <td><%=  estimatePartAbouts.query[i].address %></td>
             <td><%=  estimatePartAbouts.query[i].state %></td>
             <td><%=  estimatePartAbouts.query[i].zipcode %></td>
-            <td>
-            <a href="/estimatePartAbout/delete/<%=estimatePartAbouts.query[0]._id %>"class="btn btn-info"> <i class="glyphicon glyphicon-list-alt"></i> Delete </a> 
-            <a href="/estimatePartAbout/edit/<%= estimatePartAbouts.query[0]._id %>"class="btn btn-warning"> <i class="glyphicon glyphicon-edit"></i> edit </a> 
-            <a href="/estimatePartAbout/details/<%=  estimatePartAbouts.query[0]._id %>"class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i> Details</a>
+            
+            
+            
+            <td><a href="/estimatePartAbout/delete/<%=  estimatePartAbouts.query[i]._id %>"class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i> delete</a>
+            <a href="/estimatePartAbout/details/<%=  estimatePartAbouts.query[i]._id %>"class="btn btn-info"> <i class="glyphicon glyphicon-list-alt"></i> Details</a>
+            <a href="/estimatePartAbout/edit/<%=  estimatePartAbouts.query[i]._id %>"class="btn btn-warning"> <i class="glyphicon glyphicon-edit"></i> edit</a>
+            
+            
           </td>
          </tr>
          <% } %>

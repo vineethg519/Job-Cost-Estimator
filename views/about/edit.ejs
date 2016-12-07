@@ -1,47 +1,29 @@
-			
-			<br/>
-
 <br/>
-<h2>Create a new estimatePartAbout </h2>
-<p>There are currently
-	<%= estimatePartAbouts.query.length %>  </p>
 <br/>
-<% 
-maxID=0; 
-for (var i=0; i<estimatePartAbouts.query.length; i++) {
-    if(estimatePartAbouts.query[i]._id > maxID) {
-        maxID=estimatePartAbouts.query[i]._id;
-        }
-}
+<h2>Edit estimatePartAbout product</h2>
+<div class="content">
+	<div>
+		<form method="POST" action="/estimatePartAbout/save/<%= estimatePartAbout._id %>">
 
-%>
-	
-	<div class="content">
-		<div>
-			<form name="estimatePartAbout" method="POST" action="/estimatePartAbout/save">
+			<div class="form-group" id=frm>
+				<label for="_id">ID</label>
+				<input type="number" class="form-control" id="_id" name="_id" value="<%= estimatePartAbout._id %>" required disabled>
+			</div>
 
-				<div class="form-group" id=frm>
-					<label for="_id">ID</label>
-					<input type="number" class="form-control" id="_id" name="_id" value="<%= estimatePartAbout._id %>" 
-				</div>
+			<div class="form-group">
+				<label for="client">Client</label>
+				<input type="text" class="form-control" id="client" name="client" value="<%= estimatePartAbout.client %>" required>
+			</div>
 
-				<div class="form-group">
-					<label for="client">client</label>
-					<input type="text" class="form-control" id="name" name="client" value="<%= estimatePartAbout.client %>"
-				</div>
+			<div class="form-group">
+				<label for="address">Address</label>
+				<input type="text" class="form-control" id="address" name="address" value="<%= estimatePartAbout.address %>" required>
+			</div>
 
-				<div class="form-group">
-					<label for="address">Address</label>
-					<input type="text" class="form-control" id="address" name="address" value="<%= estimatePartAbout.address %>"
-				</div>
-
-				<div class="form-group">
-					<label for="city">City</label>
-					<input type="text" class="form-control" id="city" name="city" value="<%= estimatePartAbout.city %>"
-				</div>
-
-
-</div>
+			<div class="form-group">
+				<label for="city">City</label>
+				<input type="text" class="form-control" id="city" name="city" value="<%= estimatePartAbout.city %>" required>
+			</div>
 
 			<div class="form-group">
 				<label for="state">State</label>
@@ -55,7 +37,19 @@ for (var i=0; i<estimatePartAbouts.query.length; i++) {
 					required>
 			</div>
 
-			<input type="submit" value="Save" class="btn btn-primary" />
+			<div class="form-group">
+				<label for="latitude">latitude</label>
+				<input type="number" class="form-control" id="latitude" name="latitude" value="<%= estimatePartAbout.latitude %>"
+					required>
+			</div>
+
+			<div class="form-group">
+				<label for="longitude">longitude</label>
+				<input type="number" class="form-control" id="longitude" name="longitude" value="<%= estimatePartAbout.longitude %>"
+					required>
+			</div>
+
+        <input type="submit" value="Save" class="btn btn-primary" />
 		</form>
 		<br/>
 		<form method="get" action="/estimatePartAbout">
