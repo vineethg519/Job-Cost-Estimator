@@ -1,16 +1,16 @@
 <h2>Recent waterproofing estimates</h2>
 <p>There are  <%= waterproofingEstimates.query.length %> waterproofing estimates. <br/>
-<a class = "btn btn-" href="/waterproofingEstimate/create"><i class="glyphicon glyphicon-pencil"></i>Add a new one.</a></p>
+<a class = "btn btn-success" href="/waterproofingEstimate/create"><i class="glyphicon glyphicon-pencil"></i> Add a new one.</a></p>
 <% c=0; %>
 <% for(var item in waterproofingEstimates.query) { %>
 <% c++; %>
 <div class="panel panel-default">
 <div class="panel-heading">
 <div class="text-muted pull-right">
-<%= waterproofingEstimates.published %></div>
-<%= waterproofingEstimates.title %></div>
-<% include ..\..\views\estimateparts\est-about %>
-Square footage : <% include ..\..\views\estimateparts\est-footage %> sqft<br/>
+<%= waterproofingEstimates.published %></div><br/>
+<%= waterproofingEstimates.title %></div><br/>
+<% include ..\..\views\estimateparts\est-about %><br/>
+Square footage : <% include ..\..\views\estimateparts\est-footage %><br/>
 Flooring : <% include ..\..\views\estimateparts\est-flooring %><br/>
 Aggregate : <% include ..\..\views\estimateparts\est-aggregate %> <br/>
 Labour Cost : <% include ..\..\views\estimateparts\est-labor %> <br/>
@@ -71,9 +71,9 @@ Misc : <% include ..\..\views\estimateparts\est-misc %><br/>
 
 <div class="panel-body">
 <%= waterproofingEstimates.comment %>
-<a class = "btn btn-danger" href="/waterproofingEstimate/delete/<%= waterproofingEstimates.query[0]._id %>"><i class="glyphicon glyphicon-trash"></i>Delete</a> 
-<a class = "btn btn-info" href="/waterproofingEstimate/details/<%= waterproofingEstimates.query[0]._id %>"><i class="glyphicon glyphicon-list-alt"></i>Details</a> 
-<a class = "btn btn-warning" href="/waterproofingEstimate/edit/<%= waterproofingEstimates.query[0]._id %>"><i class="glyphicon glyphicon-edit"></i>Edit</a>
+    <a class = "btn btn-danger" href="/waterproofingEstimate/delete/<%= waterproofingEstimates.query[0]._id %>"><i class="glyphicon glyphicon-trash"></i> Delete</a> 
+    <a class = "btn btn-info" href="/waterproofingEstimate/details/<%= waterproofingEstimates.query[0]._id %>"><i class="glyphicon glyphicon-list-alt"></i> Details</a> 
+    <a class = "btn btn-warning" href="/waterproofingEstimate/edit/<%= waterproofingEstimates.query[0]._id %>"><i class="glyphicon glyphicon-edit"></i> Edit</a>
 </div>
 </div>
 <% } %>
