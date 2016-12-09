@@ -4,20 +4,22 @@
 <br/>
 <br/>
 
-<% 
-maxID=0; 
+
+<%
+maxID=0;
 for (var i=0; i<estimatePartLabors.query.length; i++) {
     if(estimatePartLabors.query[i]._id > maxID) {
         maxID=estimatePartLabors.query[i]._id;
         }
 }
-maxDisplayorder=0; 
+ maxDisplayorder=0;
 for (var i=0; i<estimatePartLabors.query.length; i++) {
     if(estimatePartLabors.query[i].displayorder > maxDisplayorder) {
         maxDisplayorder=estimatePartLabor.query[i].displayorder;
         }
 }
 %>
+
 	
 	<div class="content">
 
@@ -27,7 +29,13 @@ for (var i=0; i<estimatePartLabors.query.length; i++) {
 <table class="table table-hover table-bordered">
 
     <tr><th>ID</th> <td> <input type="number" class="form-control" value="<%= newID %>" name="_id" required readonly /></td></tr>
-	<tr><th>type</th> <td><input type="text" class="form-control" name="type" >  </input></td></tr>
+	<tr><th>type</th> <td><select id="type" name="type" value="Manager" class="form-control">						
+						<option> Manager</option>
+						<option> Driver</option>
+						<option> Accountant</option>
+						<option> Secratery</option>
+						<option> Assistant</option>
+	</select></td></tr>
 	<tr><th>count</th> <td><input type="number" class="form-control" name="count" > </input></td></tr>
     <tr><th>hoursPerPerson</th> <td><input type="number" class="form-control" name="hoursPerPerson" > </input></td></tr>
 	<tr><th>dollarsPerHour</th> <td><input type="text" class="form-control" name="dollarsPerHour" >  </input></td></tr>
