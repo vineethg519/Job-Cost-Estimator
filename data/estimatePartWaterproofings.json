@@ -1,7 +1,197 @@
 [
   {
+    "_id":1,
     "productType": "Urethane",
-    "usesUrethane": false,
-    "subtotal": 55
+    "usesUrethane": true,
+    "urethaneSelection": {
+    "name": "70714/70715=09 general purpose urethane",
+    "_id": 2,
+    "coatingType": "Urethane",
+    "defaultCoverageSqFt": 100,
+    "unit": "gal",
+    "displayorder": 20,
+    "price": 50.38
+  },
+    "urethaneCoverageSqFt": 100,
+    "usesExpoxy": true,
+    "expoxySelection": {
+    "name": "70714/70715 - epoxy",
+    "_id": 1,
+    "coatingType": "Epoxy",
+    "defaultCoverageSqFt": 100,
+    "unit": "gal",
+    "displayorder": 10,
+    "price": 56.3
+       },
+    "epoxyCoverageSqFt": 150,
+     "usesUrethanePrimer": true,
+    "urethanePrimerSelection": {
+      "_type": "waterproofingPrimer",
+         "_id": 2,
+        "name": "7780/7781 - water based epoxy",
+        "unit": "gal",
+        "displayorder": 20,
+        "price": 38.50
+  },
+    "urethanePrimerCoverageSqFt": 100,
+    "usesBasecoat": true,
+    "basecoatSelection": {
+      "name": "7430 - urethane",
+    "_id": 1,
+    "unit": "gal",
+    "displayorder": 10,
+    "price": 41
+    },
+    "basecoatCoverageSqFt": 100,
+    "usesPrimer": true,
+    "primerSelection": {
+      "_type": "waterproofingPrimer",
+        "_id": 1,
+        "name": "7760/7761 - solvent based epoxy",
+        "unit": "gal",
+        "displayorder": 10,
+        "price": 33.75
+    },
+    "primerCoverageSqFt": 100,
+    "usesTopcoat": true,
+    "topcoatSelection": {
+      "name": "7441 - urethane",
+    "_id": 1,
+    "defaultCoverageSqFt": 100,
+    "unit": "gal",
+    "displayorder": 10,
+    "price": 44
+    },
+    "topcoatCoverageSqFt": 100
+  },
+  {
+    "_id":2,
+    "productType": "Cemetitious overlay",
+    "usesUrethane": true,
+    "urethaneSelection": {
+    "name": "70714/70715=09 general purpose urethane",
+    "_id": 2,
+    "coatingType": "Urethane",
+    "defaultCoverageSqFt": 100,
+    "unit": "gal",
+    "displayorder": 20,
+    "price": 50.38
+  },
+    "urethaneCoverageSqFt": 100,
+    "usesExpoxy": true,
+    "expoxySelection": {
+    "name": "70714/70715 - epoxy",
+    "_id": 1,
+    "coatingType": "Epoxy",
+    "defaultCoverageSqFt": 100,
+    "unit": "gal",
+    "displayorder": 10,
+    "price": 56.3
+       },
+    "epoxyCoverageSqFt": 150,
+     "usesUrethanePrimer": true,
+    "urethanePrimerSelection": {
+      "_type": "waterproofingPrimer",
+         "_id": 2,
+        "name": "7780/7781 - water based epoxy",
+        "unit": "gal",
+        "displayorder": 20,
+        "price": 38.50
+  },
+    "urethanePrimerCoverageSqFt": 100,
+    "usesBasecoat": true,
+    "basecoatSelection": {
+      "name": "7430 - urethane",
+    "_id": 1,
+    "unit": "gal",
+    "displayorder": 10,
+    "price": 41
+    },
+    "basecoatCoverageSqFt": 100,
+    "usesPrimer": true,
+    "primerSelection": {
+      "_type": "waterproofingPrimer",
+        "_id": 1,
+        "name": "7760/7761 - solvent based epoxy",
+        "unit": "gal",
+        "displayorder": 10,
+        "price": 33.75
+    },
+    "primerCoverageSqFt": 150,
+    "usesTopcoat": true,
+    "topcoatSelection": {
+      "name": "7441 - urethane",
+    "_id": 1,
+    "defaultCoverageSqFt": 100,
+    "unit": "gal",
+    "displayorder": 10,
+    "price": 44
+    },
+    "topcoatCoverageSqFt": 100
+  },
+  {
+    "_id":3,
+    "productType": "Urethane",
+    "usesUrethane": true,
+    "urethaneSelection": {
+    "name": "70714/70715=09 general purpose urethane",
+    "_id": 2,
+    "coatingType": "Urethane",
+    "defaultCoverageSqFt": 100,
+    "unit": "gal",
+    "displayorder": 20,
+    "price": 50.38
+  },
+    "urethaneCoverageSqFt": 100,
+    "usesExpoxy": true,
+    "expoxySelection": {
+    "name": "70714/70715 - epoxy",
+    "_id": 1,
+    "coatingType": "Epoxy",
+    "defaultCoverageSqFt": 100,
+    "unit": "gal",
+    "displayorder": 10,
+    "price": 56.3
+       },
+    "epoxyCoverageSqFt": 150,
+     "usesUrethanePrimer": true,
+    "urethanePrimerSelection": {
+      "_type": "waterproofingPrimer",
+         "_id": 2,
+        "name": "7780/7781 - water based epoxy",
+        "unit": "gal",
+        "displayorder": 20,
+        "price": 38.50
+  },
+    "urethanePrimerCoverageSqFt": 150,
+    "usesBasecoat": true,
+    "basecoatSelection": {
+      "name": "7430 - urethane",
+    "_id": 1,
+    "unit": "gal",
+    "displayorder": 10,
+    "price": 41
+    },
+    "basecoatCoverageSqFt": 100,
+    "usesPrimer": true,
+    "primerSelection": {
+      "_type": "waterproofingPrimer",
+        "_id": 1,
+        "name": "7760/7761 - solvent based epoxy",
+        "unit": "gal",
+        "displayorder": 10,
+        "price": 33.75
+    },
+    "primerCoverageSqFt": 100,
+    "usesTopcoat": true,
+    "topcoatSelection": {
+      "name": "7441 - urethane",
+    "_id": 1,
+    "defaultCoverageSqFt": 100,
+    "unit": "gal",
+    "displayorder": 10,
+    "price": 44
+    },
+    "topcoatCoverageSqFt": 150
   }
 ]

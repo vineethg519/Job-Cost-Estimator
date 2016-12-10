@@ -1,25 +1,134 @@
-
 <% console.log(estimatePartWaterproofings.query); %>
 <div class="container">
  <h2>All entries</h2>
 
 <p>There are  <%= estimatePartWaterproofings.query.length %> entries. <br/>
-<a href="edit.html">Add a new one.</a></p>
+<a href="/estimatePartWaterproofing/create"class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span>Add a new one.</a></p>
 
 <table class="table" border="1">
     <thead>
       <tr>
-        <th>Subtotal</th>
+        <th>ID</th>
+        <th>ProductType</th>
+        <th>Uses Urethane</th>
+			  <th>Urethane Product </th>
+        <th>Price</th>
+        <th>Coverage SqFt</th>
+			  <th>Uses Epoxy</th>
+        <th>Epoxy Product </th>
+        <th>Price</th>
+        <th>Coverage SqFt</th>
+        <th>Uses Primer</th>
+        <th>Primer Product </th>
+        <th>Price</th>
+        <th>Coverage SqFt</th>
+        <th>Uses Basecoat</th>
+        <th>Basecoat Product </th>
+        <th>Price</th>
+        <th>Coverage SqFt</th>
+        <th>Uses Topcoat</th>
+        <th>Topcoat Product </th>
+        <th>Price</th>
+        <th>Coverage SqFt</th>
+        
        <th>Actions</th>
     </tr>
     </thead>
     <tbody>
 <% for (var i = 0; i < estimatePartWaterproofings.query.length; i++) { %>
-         <tr>
+         <!-- <tr>
+            <td><%=  estimatePartWaterproofings.query[i]._id %></td>
+            <td><%=  estimatePartWaterproofings.query[i].productType %></td>
+            <td><%=  estimatePartWaterproofings.query[i].Products %></td>
             <td><%=  estimatePartWaterproofings.query[i].subtotal %></td>
-            <td>Delete  Details  Edit</td>
+            <td>
+							<a href="/estimatePartWaterproofing/delete/<%= estimatePartWaterproofings.query[i]._id %>" class="btn btn-danger"> <span class="glyphicon glyphicon-trash"></span> Delete </a> 
+							<a href="/estimatePartWaterproofing/details/<%= estimatePartWaterproofings.query[i]._id %>"class="btn btn-primary"> <span class="glyphicon glyphicon-edit"></span> Details </a> 
+							<a href="/estimatePartWaterproofing/edit/<%= estimatePartWaterproofings.query[i]._id %>" class="btn btn-warning"> <span class="glyphicon glyphicon-pencil"></span> Edit </a> 
+						</td>
+         </tr> -->
+
+ <tr>
+            <td>
+							<%=  estimatePartWaterproofings.query[i]._id %>
+						</td>
+						<td>
+							<%=  estimatePartWaterproofings.query[i].productType %>
+						</td>
+						<td>
+							<%=  estimatePartWaterproofings.query[i].usesUrethane %>
+						</td>
+						<td>						
+                <%=  estimatePartWaterproofings.query[i].urethaneSelection.name %>
+						</td>
+            <td>                       
+                <%= estimatePartWaterproofings.query[i].urethaneSelection.price %>
+            </td>
+						<td>							 
+                <%= estimatePartWaterproofings.query[i].urethaneCoverageSqFt %> 
+						</td>
+            <td>
+							    <%=  estimatePartWaterproofings.query[i].usesExpoxy %>
+						</td>
+						<td>
+							   <%= estimatePartWaterproofings.query[i].expoxySelection.name  %>
+						</td>
+            <td>
+                  <%=  estimatePartWaterproofings.query[i].expoxySelection.price %>
+            </td>
+            <td>
+							    <%=  estimatePartWaterproofings.query[i].epoxyCoverageSqFt %>
+						</td>
+            <td>
+							    <%=  estimatePartWaterproofings.query[i].usesPrimer %>
+						</td>
+						<td>
+							   <%= estimatePartWaterproofings.query[i].primerSelection.name %>
+						</td>
+            <td>
+                  <%= estimatePartWaterproofings.query[i].primerSelection.price %>
+            </td>
+            <td>
+							    <%=  estimatePartWaterproofings.query[i].primerCoverageSqFt %>
+						</td>
+            <td>
+							    <%=  estimatePartWaterproofings.query[i].usesBasecoat %>
+						</td>
+						<td>
+							   <%=  estimatePartWaterproofings.query[i].basecoatSelection.name %>
+						</td>
+            <td>
+                  <%= estimatePartWaterproofings.query[i].basecoatSelection.price  %>
+            </td>
+            <td>
+							    <%=  estimatePartWaterproofings.query[i].basecoatCoverageSqFt %>
+						</td>
+            <td>
+							    <%=  estimatePartWaterproofings.query[i].usesTopcoat %>
+						</td>
+						<td>
+							   <%= estimatePartWaterproofings.query[i].topcoatSelection.name %>
+						</td>
+            <td>
+                  <%= estimatePartWaterproofings.query[i].topcoatSelection.price  %>
+            </td>
+            <td>
+							    <%=  estimatePartWaterproofings.query[i].topcoatCoverageSqFt %>
+						</td>
+        
+
+            <td>
+                <a href="estimatePartWaterproofing/delete/<%=  estimatePartWaterproofings.query[i]._id %>"> <button type="button" class="btn btn-danger"> <span class="glyphicon glyphicon-trash"></span> Delete </button> </a> <br/><br/>
+                <a href="estimatePartWaterproofing/details/<%= estimatePartWaterproofings.query[i]._id %>"> <button type="button" class="btn btn-info"> <span class="glyphicon glyphicon-list-alt"></span> Details </button> </a> <br/><br/>
+                <a href="estimatePartWaterproofing/edit/<%=    estimatePartWaterproofings.query[i]._id %>"> <button type="button" class="btn btn-warning"> <span class="glyphicon glyphicon-edit"></span> Edit </button> </a>
+            </td>
          </tr>
+
+
          <% } %>
 </tbody>
 </table>
 </div>
+<!-- These Views are managed by Team 03-07 -->
+<!-- Peddireddy Tarun -->
+<!-- Aditya Sreeram Reddy Morugadi -->
