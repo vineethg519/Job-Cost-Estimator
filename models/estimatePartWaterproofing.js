@@ -1,10 +1,11 @@
 var mongoose = require('mongoose')
   , Schema = mongoose.Schema
-  , WaterproofingBasecoat = require('./WaterproofingBasecoat.js')
-  , WaterproofingPrimer = require('./WaterproofingPrimer.js')
-  , WaterproofingTopcoat = require('./WaterproofingTopcoat.js')
+  , WaterproofingBasecoat = require('./waterproofingBasecoat.js')
+  , WaterproofingPrimer = require('./waterproofingPrimer.js')
+  , WaterproofingTopcoat = require('./waterproofingTopcoat.js')
 
 var EstimatePartWaterpWaterproofingSchema = new Schema({
+  _id: { type: Number, required: true },
   productType: { type: String, required: true, default: 'Urethane', enum: ['Urethane', 'Cementicious Overlay'] },
 
   usesUrethane: { type: Boolean, required: true, default: false },
@@ -37,6 +38,8 @@ var EstimatePartWaterpWaterproofingSchema = new Schema({
 var estimatePartWaterpWaterproofing = mongoose.model('EstimatePartWaterpWaterproofing', EstimatePartWaterpWaterproofingSchema)
 module.exports = estimatePartWaterpWaterproofing
 
-// This model is managed by Team 5-07
-// Swetha Gudivaka
-// Karuna Reddy Gangidi
+
+// This model is managed by Team 3-07
+// Aditya Sreeram Reddy Morugadi	
+// Peddireddy tarun
+

@@ -101,6 +101,7 @@ api.post('/save', function(req, res) {
     var item = new Model;
     console.log("NEW ID " + req.body._id);
     item._id = parseInt(req.body._id);
+	item.name = req.body.name;
     item.sqft = req.body.sqft;
     item.length = req.body.length;
     item.width = req.body.width;
@@ -120,6 +121,7 @@ api.post('/save/:id', function(req, res) {
     if (!item) { return res.end(notfoundstring); }
     console.log("ORIGINAL VALUES " + JSON.stringify(item));
     console.log("UPDATED VALUES: " + JSON.stringify(req.body));
+	item.name = req.body.name;
     item.sqft = req.body.sqft;
     item.length = req.body.length;
     item.width = req.body.width;

@@ -1,27 +1,71 @@
 <h2>Recent flooring estimates</h2>
 <p>There are  <%= flooringEstimates.query.length %> flooring estimates. <br/>
-<a href="flooringEstimate/create"><button type="button" class="btn btn-primary">Add a new one</button></a></p>
-<% for(var item in flooringEstimates.query) { %>
+<a href="/flooringEstimate/create"><button type="button" class="btn btn-primary">Add a new one</button></a></p>
+<% for (var i = 0; i < flooringEstimates.query.length; i++) { %>
 <div class="panel panel-default">
-<div class="panel-heading">
-<div class="text-muted pull-right">
-<%= flooringEstimates.published %></div>
-<%= flooringEstimates.title %></div>
-<% include ..\..\views\estimateparts\est-about %>
-<% include ..\..\views\estimateparts\est-footage %>
-<% include ..\..\views\estimateparts\est-flooring %>
-<% include ..\..\views\estimateparts\est-aggregate %>
-<% include ..\..\views\estimateparts\est-labor %>
-<% include ..\..\views\estimateparts\est-mileage %>
-<% include ..\..\views\estimateparts\est-misc %>
-<% include ..\..\views\estimateparts\est-result %>
+<div class="panel-heading"></div>
+<div class="text-muted pull-right"></div>
 <div class="panel-body">
-<%= flooringEstimates.comment %>
-</div>
-</div>
+ Client :<%=  flooringEstimates.query[i].estimatePartAbout.client %> <br>
+            Created :<%=  flooringEstimates.query[i].estimatePartAbout.created %><br>
+            Address : <%= flooringEstimates.query[i].estimatePartAbout.address %><br>
+            City :<%= flooringEstimates.query[i].estimatePartAbout.city %><br>
+            State : <%= flooringEstimates.query[i].estimatePartAbout.state %><br>
+            Zipcode : <%= flooringEstimates.query[i].estimatePartAbout.zipcode %><br>
+            Sqft : <%= flooringEstimates.query[i].estimateSquareFootage.sqft %><br>
+             costPerSquareFoot: <%= flooringEstimates.query[i].costPerSquareFoot %><br>
+            BidPerSqrFoot :<%= flooringEstimates.query[i].bidPerSquareFoot %><br>
+<%
+    var total_cost = 8526;
+    var total_unit_cost = 2.13;
+%>
+<table class="table">
+<tr>
+    <th colspan="2">Flooring Estimates</th>
+</tr>
+<tr>
+    <td>Total area in sqft</td>
+    <td>5000</td>
+</tr>
+<tr>
+    <td>Total cost in $USD</td>
+    <td>$<%= total_cost %></td>
+</tr>
+<tr>
+    <td>unit cost in $/sqft</td>
+    <td>$<%= total_unit_cost %></td>
+</tr>
+</table>
+
+<table class="table">
+
+<tr>
+    <th>Profit</th>
+    <th>Total cost in $USD</th>
+    <th>Bid Price in $/sqft</th>
+</tr>
+<% for(var j=0; j<5; j++){
+    var percentage = 50+(j*10);
+     %>
+    <tr>
+        <td><%= percentage%>%</td>
+        <td>$<%= (total_cost+total_cost*percentage/100).toFixed(1) %></td>
+        <td>$<%= (total_unit_cost*+total_unit_cost*percentage/100).toFixed(1) %></td>
+    </tr> 
 <% } %>
+</table>
+
+        Last updated: <%= flooringEstimates.query[i].updated %><br/><br/>
+                 <a href="/flooringEstimate/delete/<%= flooringEstimates.query[i]._id %>" class="btn btn-danger"> Delete </button> </a> 
+                <a href="/flooringEstimate/details/<%= flooringEstimates.query[i]._id %>"><button type="button" class="btn btn-info">  Details </button> </a>  
+                <a href="/flooringEstimate/edit/<%= flooringEstimates.query[i]._id %>"><button type="button" class="btn btn-warning"> Edit</a><br>
+        </div>
+    </div>
+ <% } %>
+ 
+
 
 <!-- This model is managed by Team 3-01
  Avinash varma Mandapati
- Vipul Reddy Maddadi
+ Vipul Reddy Madadi
 -->
